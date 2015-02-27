@@ -66,58 +66,17 @@ header {padding: 3.5em 1.25em; position: relative;}
 .menu {background: #292929; clear: both; display: none; float: left; width: 100%;}
 .menu-icon {float: right; height: 40px; margin: 0 !important; margin-bottom: 11px;}
 .menu .menu-link {color: white;padding-bottom: 11px;position: relative;text-decoration: none; transition:color 1s;}
-.menu .menu-link:hover {color: #33cc00; transition: color 1s;}
-.menu li {color: white; font-family: GothamBold; height: 3em; line-height: 2.5em; text-align: center; width: 100%; }
-        .menu .menu-link:before {
-            background-color: #FFF;
-            content: "";
-            height: 2px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            visibility: hidden;
-            -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-            -webkit-transition: all 0.3s ease-in-out 0s;
-            transition: all 0.3s ease-in-out 0s;
-        }
+.menu .menu-link:hover { transition: color 1s;}
+.menu li {color: white; font-family: GothamBold; height: 3em; line-height: 2.5em; text-align: center; width: 100%; } .menu .menu-link:before { background-color: #FFF; content : ""; height : 2px; position : absolute; bottom : 0; left              : 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform          : scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; } .menu .menu-link:hover:before { visibility        : visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
 
-        .menu .menu-link:hover:before {
-            visibility: visible;
-            -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-        }
 @media (min-width:48em) {
     .logo { width: 142px;}
-
     .menu {background: white; clear: none; display: inline; float: right; width: auto;}
     .menu-icon {display: none;}
-        .menu .menu-link:before {
-            background-color: #33cc00;
-            content: "";
-            height: 2px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            visibility: hidden;
-            -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-            -webkit-transition: all 0.3s ease-in-out 0s;
-            transition: all 0.3s ease-in-out 0s;
-        }
-
-        .menu .menu-link:hover:before {
-            visibility: visible;
-            -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-        }
-        .menu .menu-link {
-            color: black;
-        }
-        .menu li {display: inline-block; font-family: GothamBold; padding:0 15px; text-align: center; width: 5em;}
-
+    .menu .menu-link:before { background-color: #000; content : ""; height : 2px; position : absolute; bottom : 0; left : 0; width : 100%; opacity : 0; -webkit-transform: scaleX(0); transform : scaleX(0); -webkit-transition: all .4s ease-in-out 0s; transition : all .4s ease-in-out 0s; }
+    .menu .menu-link:hover:before { opacity : 1.0; -webkit-transform: scaleX(1); transform : scaleX(1); }
+    .menu .menu-link { color : black; }
+    .menu li {display: inline-block; font-family: GothamBold; padding:0 15px; text-align: center; width: 5em;}
 }
 
 /* -----------[ CONTENT ]----------- */
@@ -381,7 +340,7 @@ header {padding: 3.5em 1.25em; position: relative;}
 
 /* -----------[ FOOTER ]----------- */
 
-.footer {background-image:url(/images/porfolio/ClientJ/gallery-image.jpg); background-attachment: scroll; background-size:cover; font-size: .9em;}
+.footer {background-image:url(../images/porfolio/ClientJ/gallery-image.jpg); background-attachment: scroll; background-size:cover; font-size: .9em;}
 .footer .always-visible { color: white; height: 35px; padding: 25px 50px; text-align: center;}
 .footer .always-visible .copyright {float: left; width: 20%;}
 .footer .always-visible .information {float: left; width: 60%;}

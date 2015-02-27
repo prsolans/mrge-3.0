@@ -208,6 +208,11 @@
             });
 
             $('.menu-icon').on('click', function () {
+
+                alert(
+                        'tappt'
+                );
+                $('.menu-icon').attr('src', 'images/menu-on.png');
                 menu.slideToggle();
 
                 if($(menu).is(':visible')){
@@ -220,7 +225,7 @@
                 alert(
                         'tappt'
                 );
-                $('.menu-icon').attr('src', 'images/menu_on.png');
+                $('.menu-icon').attr('src', 'images/menu-on.png');
                 menu.slideToggle();
 
                 if($(menu).is(':visible')){

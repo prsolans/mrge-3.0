@@ -102,7 +102,8 @@ a#close-menu, a:visited#close-menu  {color: #CC0066; text-decoration: none;}
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
 
 @media screen AND (orientation:landscape){
-    #menu.menu-small.open ul {margin-top: 20px; height: 1.5em;}
+    #menu.menu-small.open ul {margin-top: 0px !important;}
+    #menu.menu-small.open ul li { line-height: 1.2em;}}
 }
 
 @media (min-width: 48em){

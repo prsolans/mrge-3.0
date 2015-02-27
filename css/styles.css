@@ -101,11 +101,6 @@ a#close-menu, a:visited#close-menu  {color: #CC0066; text-decoration: none;}
 .menu .menu-link:before { background-color: #FFF; content : ""; height : 1px; position : absolute; bottom : 0; left: 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform: scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; }
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
 
-@media screen AND (orientation:landscape){
-    #menu.menu-small.open ul {margin-top: 0px !important;}
-    #menu.menu-small.open ul li { line-height: 1.2em;}}
-}
-
 @media (min-width: 48em){
     .logo { width: 142px;}
     #menu {background: white; clear: none; display: inline; font-family: Gotham-Bold; font-size: 1em; float: right; width: auto;}
@@ -116,6 +111,10 @@ a#close-menu, a:visited#close-menu  {color: #CC0066; text-decoration: none;}
     #menu li {display: inline-block; font-family: GothamBold; padding:0 15px; text-align: center; width: 5em;}
 }
 
+@media screen AND (orientation:landscape){
+#menu.menu-small.open ul {margin-top: 0px !important;}
+#menu.menu-small.open ul li { line-height: 1.2em;}}
+}
 /* -----------[ CONTENT ]----------- */
 /*h1{font-family: 'Utopia'; font-size: 5.1875em; text-align: center;}*/
 .last-content{margin-bottom: 260px;}

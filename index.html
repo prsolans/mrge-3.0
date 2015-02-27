@@ -17,10 +17,10 @@
                     <img alt="Merge Design + Interactive" src="images/merge-retina-mask.png" class="overlay"/>
                 </a>
             </div>
-            <img src="images/menu.png" class="menu-icon menu-link" />
+            <img src="images/menu.png" class="menu-icon" />
 
             <div id="menu">
-                <a href="#" id="close-menu">X</a>
+                <a href="#" id="close-menu" class="menu-link">X</a>
                 <ul><li><a href="#" class="menu-link">Work</a></li><li><a href="#" class="menu-link">Expertise</a></li><li><a href="#" class="menu-link">Agency</a></li><li><a href="#" class="menu-link">Contact</a></li></ul>
             </div>
         </div>
@@ -209,7 +209,7 @@
             });
 
             $('#close-menu').on('click', function() {
-               menu.addClass('closed').removeClass('open');
+                menu.addClass('closed').removeClass('open');
                 menu.css('display', 'none');
             });
 
@@ -227,9 +227,7 @@
             });
 
             function colorChange(){
-                console.log('working');
                 $('.menu-link').animate({color: '#33cc00'}, 1500).delay(500).animate({color: '#333'}, 1500).delay(500).animate({color: '#CC0066'}, 1500);
-                //.animate({color: '#33cc00'}, 650).animate({color: '#CC0066'}, 650);
             }
 
             $(window).resize(function () {

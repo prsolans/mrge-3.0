@@ -199,12 +199,16 @@
 
             var menu = $('#menu');
 
+            $('.overlay').on('hover', function() {
+                colorChange(this);
+            });
+
             $('.menu-icon').on('click', function () {
                 menu.slideToggle();
 
                 if($(menu).is(':visible')){
                     menu.addClass('open');
-                    colorChange();
+                    colorChange('.menu-link');
                 }
             });
 
@@ -226,9 +230,7 @@
                 }
             });
 
-            function colorChange(){
-                $('.menu-link').animate({color: '#33cc00'}, 1500).delay(500).animate({color: '#333'}, 1500).delay(500).animate({color: '#CC0066'}, 1500).delay(500).animate({color: '#292929'}, 1500);
-            }
+
 
             $(window).resize(function () {
 
@@ -240,6 +242,10 @@
                     menu.addClass('menu-small');
                 }
             });
+
+            function colorChange(element){
+                $(element).animate({color: '#33cc00'}, 1500).delay(500).animate({color: '#333'}, 1500).delay(500).animate({color: '#CC0066'}, 1500).delay(500).animate({color: '#292929'}, 1500);
+            }
 
             function headerScrollControl() {
                 $(window).scroll(function(){

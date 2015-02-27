@@ -101,7 +101,7 @@ a#close-menu, a:visited#close-menu  {color: #CC0066; text-decoration: none;}
 .menu .menu-link:before { background-color: #FFF; content : ""; height : 2px; position : absolute; bottom : 0; left: 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform: scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; }
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
 
-@media (min-width:48em) {
+@media (min-width:48em) AND (orientation:landscape) {
     .logo { width: 142px;}
     #menu {background: white; clear: none; display: inline; font-family: Gotham-Bold; font-size: 1em; float: right; width: auto;}
     #close-menu, .menu-icon {display: none;}

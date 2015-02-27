@@ -1,0 +1,62 @@
+﻿/* Web Fonts */
+
+@font-face {
+  font-family:'GothamLight';
+  src:url('../fonts/gotham-light.eot');
+  src:local('☺'),
+    url('../fonts/gotham-light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham-light.woff') format('woff'),
+    url('../fonts/gotham-light.ttf') format('truetype'),
+    url('../fonts/gotham-light.svg#GothaLight') format('svg');
+  font-weight:normal;
+  font-style:normal;
+  advancedAntiAliasing: true;
+}
+
+@font-face {
+  font-family:'GothamBook';
+  src:url('../fonts/GothaBoo.eot');
+  src:local('☺'),
+    url('../fonts/GothaBoo.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/GothaBoo.woff') format('woff'),
+    url('../fonts/GothaBoo.ttf') format('truetype'),
+    url('../fonts/GothaBoo.svg#GothaBoo') format('svg');
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face {
+  font-family:'GothamBold';
+  src:url('../fonts/GothaBol.eot');
+  src:local('☺'),
+    url('../fonts/GothaBol.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/GothaBol.woff') format('woff'),
+    url('../fonts/GothaBol.ttf') format('truetype'),
+    url('../fonts/GothaBol.svg#Gotha-Bol') format('svg');
+  font-weight:normal;
+  font-style:normal;
+  advancedAntiAliasing: true;
+}
+
+@font-face {
+  font-family:'GothamMedium';
+  src:url('../fonts/GothaMed.eot');
+  src:local('☺'),
+    url('../fonts/GothaMed.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/GothaMed.woff') format('woff'),
+    url('../fonts/GothaMed.ttf') format('truetype'),
+    url('../fonts/GothaMed.svg#GothaMed') format('svg');
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face {
+    font-family: 'Utopia';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/utopiastd-blackheadline-webfont.eot');
+    src: url('../fonts/utopiastd-blackheadline-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/utopiastd-blackheadline-webfont.woff') format('woff'),
+         url('../fonts/utopiastd-blackheadline-webfont.ttf') format('truetype'),
+         url('../fonts/utopiastd-blackheadline-webfont.svg#utopiastd-blackheadline-webfont') format('svg');
+}  

@@ -11,12 +11,14 @@
     <header class="header-tall">
         <div class="wrapper">
             <div class="logo">
-                <img src="images/menu.png" class="menu-icon" />
                 <a href="/">
                     <img alt="Merge Design + Interactive" src="images/merge-retina-mask.png" class="overlay"/>
                 </a>
             </div>
-            <div class="menu">
+            <img src="images/menu.png" class="menu-icon" />
+
+            <div id="menu">
+                <a href="#" id="close-menu">X</a>
                 <ul><li><a href="#" class="menu-link">Work</a></li><li><a href="#" class="menu-link">Expertise</a></li><li><a href="#" class="menu-link">Agency</a></li><li><a href="#" class="menu-link">Contact</a></li></ul>
             </div>
         </div>
@@ -192,16 +194,27 @@
     <script>
        
         $(document).ready(function () {
-            
-            $('.menu-icon').on('click', function () {
-                $('.menu').slideToggle();
-            });
 
-            $(window).resize(function () {
-                if ($(document).width() > '768') {
-                    $('.menu').show();
+            var menu = $('#menu');
+
+            $('.menu-icon').on('click', function () {
+               menu.slideToggle();
+
+                if($(menu).is(':visible')){
+                    menu.addClass('open');
                 }
             });
+
+            $('#close-menu').on('click', function() {
+               menu.addClass('closed').removeClass('open');
+                menu.css('display', 'none');
+            });
+
+            var screenSize = $(window).width();
+
+            if (screenSize < '768') {
+                menu.addClass('menu-small');
+            }
 
             $('.footer').mouseover(function () {
                 if ($('.hidden-footer').is(':hidden')) {         
@@ -210,35 +223,32 @@
                 }
             });
 
+            $(window).resize(function () {
+
+                if ($(document).width() > '768') {
+                    menu.show().removeClass('menu-small').removeClass('open');
+                }
+                else {
+                    menu.addClass('menu-small');
+                }
+            });
+
 
             $(window).scroll(function(){
-                console.log($(document).scrollTop());
                 if($(document).scrollTop() > 0)
                 {
-//                        $('header').animate({
-//                            height:'40px',
-//                            padding: '.5em 1.25em'
-//
-//                        },600);
-
-
                     $('header').removeClass('header-tall').addClass('header-small');
 
                 }
                 if ($(document).scrollTop() <= 0) {
-//                    $('header').animate({
-//                        height:'85px',
-//                        padding: '3.5em 1.25em'
-//                    }, 600);
-
                     $('header').removeClass('header-small').addClass('header-tall');
-
-                    console.log('now');
-
 
                 }
             });
+
         });
+
+
 
         
     </script>

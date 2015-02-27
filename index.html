@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/fonts.css" media="screen" />
     <link rel="stylesheet" href="css/styles.css" media="screen" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
 </head>
@@ -199,10 +200,11 @@
             var menu = $('#menu');
 
             $('.menu-icon').on('click', function () {
-               menu.slideToggle();
+                menu.slideToggle();
 
                 if($(menu).is(':visible')){
                     menu.addClass('open');
+                    colorChange();
                 }
             });
 
@@ -223,6 +225,12 @@
                     $('html, body').animate({ scrollTop: $(document).height() - 85 }, 300, "linear" );
                 }
             });
+
+            function colorChange(){
+                console.log('working');
+                $('.menu-link').animate({color: '#333'}, 500).delay(500).animate({color: '#CC0066'}, 650).delay(500).animate({color: '#33cc00'}, 650);
+                //.animate({color: '#33cc00'}, 650).animate({color: '#CC0066'}, 650);
+            }
 
             $(window).resize(function () {
 

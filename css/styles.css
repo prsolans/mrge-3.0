@@ -75,8 +75,8 @@ header {
 
 .menu-icon {float: right; height: 40px; margin-right: 3em; margin-bottom: 11px;}
 #close-menu {position: absolute; top: 25px; left: 80%;}
-a#close-menu, a:visited#close-menu  {color: white; text-decoration: none;}
-#menu {background: #292929; clear: both; display: none; float: left; font-family: GothamLight; font-size: 3em; width: 50%;}
+a#close-menu, a:visited#close-menu  {color: #CC0066; text-decoration: none;}
+#menu {background: #292929; clear: both; display: none; float: left; font-family: GothamLight; font-size: 2em; width: 50%;}
 #menu.menu-small, #menu.menu-small.closed { position:fixed;
     top:0;
     left:0;
@@ -89,15 +89,16 @@ a#close-menu, a:visited#close-menu  {color: white; text-decoration: none;}
 #menu.menu-small.open {
     opacity: 1;
     visibility: visible;
-    background-color: green;
+    background-color: white;
     transition: opacity 0.5s;
 }
 
 #menu.menu-small.open ul {margin-top: 55px;}
 
-#menu .menu-link {color: white; padding-bottom: 11px;position: relative;text-decoration: none; transition:color 1s;}
-#menu .menu-link:hover { transition: color 1s;}
-#menu li {color: white; font-family: GothamLight; height: 3em; line-height: 2.5em; text-align: center; width: 100%; }
+#menu .menu-link {color: #CC0066; padding-bottom: 11px;position: relative;text-decoration: none; transition:color 1s;}
+
+
+#menu li {font-family: GothamLight; height: 3em; line-height: 2.5em; text-align: center; width: 100%; }
 .menu .menu-link:before { background-color: #FFF; content : ""; height : 2px; position : absolute; bottom : 0; left: 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform: scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; }
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
 

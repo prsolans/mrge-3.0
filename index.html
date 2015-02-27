@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <header>
+    <header class="header-tall">
         <div class="wrapper">
             <div class="logo">
                 <img src="images/menu.png" class="menu-icon" />
@@ -210,6 +210,34 @@
                 }
             });
 
+
+            $(window).scroll(function(){
+                console.log($(document).scrollTop());
+                if($(document).scrollTop() > 0)
+                {
+//                        $('header').animate({
+//                            height:'40px',
+//                            padding: '.5em 1.25em'
+//
+//                        },600);
+
+
+                    $('header').removeClass('header-tall').addClass('header-small');
+
+                }
+                if ($(document).scrollTop() <= 0) {
+//                    $('header').animate({
+//                        height:'85px',
+//                        padding: '3.5em 1.25em'
+//                    }, 600);
+
+                    $('header').removeClass('header-small').addClass('header-tall');
+
+                    console.log('now');
+
+
+                }
+            });
         });
 
         

@@ -217,7 +217,10 @@
             });
 
             $('.menu-icon').on('tap', function () {
-                $(this).attr('src', 'images/menu_on.png');
+                alert(
+                        'tappt'
+                );
+                $('.menu-icon').attr('src', 'images/menu_on.png');
                 menu.slideToggle();
 
                 if($(menu).is(':visible')){

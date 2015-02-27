@@ -96,7 +96,7 @@ header {
 #menu .menu-link:hover { transition: color 1s;}
 #menu li {color: white; font-family: GothamBold; height: 3em; line-height: 2.5em; text-align: center; width: 100%; } .menu .menu-link:before { background-color: #FFF; content : ""; height : 2px; position : absolute; bottom : 0; left              : 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform          : scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; } .menu .menu-link:hover:before { visibility        : visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
 
-@media (min-width:768px) {
+@media (min-width:48em) {
     .logo { width: 142px;}
     #menu {background: white; clear: none; display: inline; float: right; width: auto;}
     #close-menu, .menu-icon {display: none;}

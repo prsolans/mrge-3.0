@@ -73,7 +73,7 @@ header {padding: 3.5em 1.25em; position: relative;}
     .logo { width: 142px;}
     .menu {background: white; clear: none; display: inline; float: right; width: auto;}
     .menu-icon {display: none;}
-    .menu .menu-link:before { background-color: #000; content : ""; height : 2px; position : absolute; bottom : 0; left : 0; width : 100%; opacity : 0; -webkit-transform: scaleX(0); transform : scaleX(0); -webkit-transition: all .4s ease-in-out 0s; transition : all .4s ease-in-out 0s; }
+    .menu .menu-link:before { background-color: #000; content : ""; height : 2px; position : absolute; bottom : 0; left : 0; width : 100%; opacity : 0; -webkit-transform: scaleX(0); transform : scaleX(0); -webkit-transition: all .1s ease-in-out .1s; transition : all .1s ease-in-out .1s; }
     .menu .menu-link:hover:before { opacity : 1.0; -webkit-transform: scaleX(1); transform : scaleX(1); }
     .menu .menu-link { color : black; }
     .menu li {display: inline-block; font-family: GothamBold; padding:0 15px; text-align: center; width: 5em;}

@@ -227,31 +227,42 @@
             });
 
             function colorChange(){
-                $('.menu-link').animate({color: '#33cc00'}, 1500).delay(500).animate({color: '#333'}, 1500).delay(500).animate({color: '#CC0066'}, 1500);
+                $('.menu-link').animate({color: '#33cc00'}, 1500).delay(500).animate({color: '#333'}, 1500).delay(500).animate({color: '#CC0066'}, 1500).delay(500).animate({color: '#292929'}, 1500);
             }
 
             $(window).resize(function () {
 
                 if ($(document).width() > '768') {
                     menu.show().removeClass('menu-small').removeClass('open');
+                    headerScrollControl();
                 }
                 else {
                     menu.addClass('menu-small');
                 }
             });
 
+            function headerScrollControl() {
+                $(window).scroll(function(){
 
-            $(window).scroll(function(){
-                if($(document).scrollTop() > 0)
-                {
-                    $('header').removeClass('header-tall').addClass('header-small');
+                    if(screenSize > 768) {
+                        if ($(document).scrollTop() > 0) {
+                            $('header').removeClass('header-tall').addClass('header-small');
 
-                }
-                if ($(document).scrollTop() <= 0) {
-                    $('header').removeClass('header-small').addClass('header-tall');
+                        }
+                        if ($(document).scrollTop() <= 0) {
+                            $('header').removeClass('header-small').addClass('header-tall');
 
-                }
-            });
+                        }
+                    }
+                    else {
+                        $('header').removeClass('header-tall').addClass('header-small');
+
+                    }
+                });
+            }
+
+            headerScrollControl();
+
 
         });
 

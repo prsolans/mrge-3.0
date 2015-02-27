@@ -213,14 +213,21 @@
                 if($(menu).is(':visible')){
                     menu.addClass('open');
                     textColorChange('.menu-link');
-//                    console.log(screenHeight);
-//                    $('#menu.menu-small.open ul').css('height', screenHeight);
+                }
+            });
+
+            $('.menu-icon').on('tap', function () {
+                $(this).attr('src', 'images/menu_on.png');
+                menu.slideToggle();
+
+                if($(menu).is(':visible')){
+                    menu.addClass('open');
+                    textColorChange('.menu-link');
                 }
             });
 
             $('#close-menu').on('click', function() {
                 menu.slideToggle();
-//                menu.removeClass('open');
             });
 
 

@@ -199,8 +199,12 @@
 
             var menu = $('#menu');
 
-            $('.overlay').on('hover', function() {
-                colorChange(this);
+            var screenWidth = $(window).width();
+            var screenHeight = $(window).height();
+
+
+            $('.overlay').on('mouseover', function() {
+                backgroundColorChange('.overlay');
             });
 
             $('.menu-icon').on('click', function () {
@@ -208,18 +212,19 @@
 
                 if($(menu).is(':visible')){
                     menu.addClass('open');
-                    colorChange('.menu-link');
+                    textColorChange('.menu-link');
+//                    console.log(screenHeight);
+//                    $('#menu.menu-small.open ul').css('height', screenHeight);
                 }
             });
 
             $('#close-menu').on('click', function() {
-                menu.addClass('closed').removeClass('open');
-                menu.css('display', 'none');
+                menu.slideToggle();
+//                menu.removeClass('open');
             });
 
-            var screenSize = $(window).width();
 
-            if (screenSize < '768') {
+            if (screenWidth < '768') {
                 menu.addClass('menu-small');
             }
 
@@ -229,8 +234,6 @@
                     $('html, body').animate({ scrollTop: $(document).height() - 85 }, 300, "linear" );
                 }
             });
-
-
 
             $(window).resize(function () {
 
@@ -243,14 +246,18 @@
                 }
             });
 
-            function colorChange(element){
+            function backgroundColorChange(element){
+                $(element).animate({backgroundColor: '#33cc00'}, 1500).delay(500).animate({backgroundColor: '#333'}, 1500).delay(500).animate({backgroundColor: '#CC0066'}, 1500).delay(500).animate({backgroundColor: '#292929'}, 1500);
+            }
+
+            function textColorChange(element){
                 $(element).animate({color: '#33cc00'}, 1500).delay(500).animate({color: '#333'}, 1500).delay(500).animate({color: '#CC0066'}, 1500).delay(500).animate({color: '#292929'}, 1500);
             }
 
             function headerScrollControl() {
                 $(window).scroll(function(){
 
-                    if(screenSize > 768) {
+                    if(screenWidth > 768) {
                         if ($(document).scrollTop() > 0) {
                             $('header').removeClass('header-tall').addClass('header-small');
 

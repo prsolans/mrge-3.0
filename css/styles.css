@@ -69,9 +69,9 @@ header {
 .header-tall {height: 85px; background-color: white; padding: 3.5em 1.25em; transition: 1s;}
 
 .logo {float: left; margin: 0; padding: 0; width: 50%; height: 25px;}
-.logo img {margin-top: 9px; }
-.logo img.overlay { background-color: black; height: 25px; width:99px; transition:background-color .4s;}
-.logo img.overlay:hover {background-color: #CC0066; transition:background-color .4s;}
+.logo img {margin-top: 9px; background-color: black; height: 25px; width:99px;}
+/*.logo img.overlay { background-color: black; height: 25px; width:99px; transition:background-color .4s;}*/
+/*.logo img.overlay:hover {background-color: #CC0066; transition:background-color .4s;}*/
 
 .menu-icon {float: right; height: 40px; margin-right: 3em; margin-bottom: 11px;}
 #close-menu {position: absolute; top: 25px; left: 80%;}
@@ -97,16 +97,20 @@ a#close-menu, a:visited#close-menu  {color: #CC0066; text-decoration: none;}
 
 #menu .menu-link {color: #CC0066; padding-bottom: 11px;position: relative;text-decoration: none; transition:color 1s;}
 
-#menu li {font-family: GothamLight; height: 3em; line-height: 2.5em; text-align: center; width: 100%; }
-.menu .menu-link:before { background-color: #FFF; content : ""; height : 2px; position : absolute; bottom : 0; left: 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform: scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; }
+#menu li {font-family: GothamLight; height: 2em; line-height: 2.5em; text-align: center; width: 100%; }
+.menu .menu-link:before { background-color: #FFF; content : ""; height : 1px; position : absolute; bottom : 0; left: 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform: scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; }
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
+
+@media screen AND (orientation:landscape){
+    #menu.menu-small.open ul {margin-top: 20px; height: 1.5em;}
+}
 
 @media (min-width: 48em){
     .logo { width: 142px;}
     #menu {background: white; clear: none; display: inline; font-family: Gotham-Bold; font-size: 1em; float: right; width: auto;}
     #close-menu, .menu-icon {display: none;}
     #menu .menu-link:before { background-color: #000; content : ""; height : 2px; position : absolute; bottom : 0; left : 0; width : 100%; opacity : 0; -webkit-transform: scaleX(.5); transform : scaleX(.5); -webkit-transition: ease-in-out .3s; transition : ease-in-out .3s; }
-    #menu .menu-link:hover:before { opacity : 1.0; -webkit-transform: scaleX(1.2); transform : scaleX(1.2); }
+    #menu .menu-link:hover:before { opacity : 1.0; -webkit-transform: scaleX(1.5); transform : scaleX(1.5); }
     #menu .menu-link { color : black; }
     #menu li {display: inline-block; font-family: GothamBold; padding:0 15px; text-align: center; width: 5em;}
 }

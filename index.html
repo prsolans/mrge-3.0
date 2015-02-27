@@ -209,9 +209,6 @@
 
             $('.menu-icon').on('click', function () {
 
-                alert(
-                        'tappt'
-                );
                 $('.menu-icon').attr('src', 'images/menu-on.png');
                 menu.slideToggle();
 
@@ -222,9 +219,7 @@
             });
 
             $('.menu-icon').on('tap', function () {
-                alert(
-                        'tappt'
-                );
+
                 $('.menu-icon').attr('src', 'images/menu-on.png');
                 menu.slideToggle();
 
@@ -236,6 +231,14 @@
 
             $('#close-menu').on('click', function() {
                 menu.slideToggle();
+                $('.menu-icon').attr('src', 'images/menu.png');
+
+            });
+
+            $('#close-menu').on('tap', function() {
+                menu.slideToggle();
+                $('.menu-icon').attr('src', 'images/menu.png');
+
             });
 
 

@@ -13,7 +13,8 @@
 <body>
     <header class="header-tall">
         <div class="wrapper">
-            <div class="logo">
+
+                      <div class="logo">
                 <a href="/">
                     <img alt="Merge Design + Interactive" src="images/merge-retina-mask.png" class="overlay"/>
                 </a>
@@ -204,14 +205,16 @@
             var screenHeight = $(window).height();
 
 
-            $('.overlay').on('mouseover', function() {
+            $(".overlay").mouseenter(function(){
+                clearTimeout($(this).data('timeoutId'));
                 backgroundColorChange('.overlay');
-            });
-
-            $('.overlay').on('mouseout', function() {
-                console.log('out');
-                $('.overlay').stop();
-               fadeToGray('.overlay');
+            }).mouseleave(function(){
+                var someElement = $(this),
+                        timeoutId = setTimeout(function(){
+                            fadeToGray('.overlay');
+                        }, 650);
+                //set the timeoutId, allowing us to clear this trigger if the mouse comes back over
+                someElement.data('timeoutId', timeoutId);
             });
 
             $('.menu-icon').on('click', function () {
@@ -276,20 +279,15 @@
             function backgroundColorChange(element){
 
                 var colors = ['#7EC300', '#CC0066', '#FF6600', '#FF9900'];
-console.log('1');
                 $.each(colors, function(val){
-                    console.log('each');
                     $(element).animate({backgroundColor: colors[val]}, 3000).delay(500);
                 });
 
                 fadeToGray(element);
-
             }
 
             function fadeToGray(element){
-                console.log(element);
                 if($(element).hasClass('menu-link')){
-                    console.log('link');
                     $(element).animate({color: '#292929'}, 3000).delay(500);
                 }
                 else {
@@ -298,16 +296,13 @@ console.log('1');
             }
 
             function textColorChange(element){
-console.log('text');
                 var colors = ['#7EC300', '#CC0066', '#FF6600', '#FF9900'];
 
                 $.each(colors, function(val){
-                    console.log('text-color' + colors[val]);
                     $(element).animate({color: colors[val]}, 3000).delay(500);
                 });
 
                 fadeToGray(element);
-
             }
 
             function headerScrollControl() {

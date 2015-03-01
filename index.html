@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/styles.css" media="screen" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"></script>
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
 </head>
@@ -17,10 +18,10 @@
                     <img alt="Merge Design + Interactive" src="images/merge-retina-mask.png" class="overlay"/>
                 </a>
             </div>
-            <img src="images/menu.png" class="menu-icon" />
+            <img src="images/menu.png" width="30" height="30" class="menu-icon" />
 
             <div id="menu">
-                <a href="#" id="close-menu" class="menu-link">X</a>
+                <img src="images/menu-close.png" width="30" height="30" class="menu-close"/>
                 <ul><li><a href="#" class="menu-link">Work</a></li><li><a href="#" class="menu-link">Expertise</a></li><li><a href="#" class="menu-link">Agency</a></li><li><a href="#" class="menu-link">Contact</a></li></ul>
             </div>
         </div>
@@ -207,6 +208,12 @@
                 backgroundColorChange('.overlay');
             });
 
+            $('.overlay').on('mouseout', function() {
+                console.log('out');
+                $('.overlay').stop();
+               fadeToGray('.overlay');
+            });
+
             $('.menu-icon').on('click', function () {
 
                 $('.menu-icon').attr('src', 'images/menu-on.png');
@@ -215,6 +222,8 @@
                 if($(menu).is(':visible')){
                     menu.addClass('open');
                     textColorChange('.menu-link');
+                    backgroundColorChange('.menu-close');
+
                 }
             });
 
@@ -226,19 +235,19 @@
                 if($(menu).is(':visible')){
                     menu.addClass('open');
                     textColorChange('.menu-link');
+                    backgroundColorChange('#close-menu');
                 }
             });
 
-            $('#close-menu').on('click', function() {
+            $('.menu-close').on('click', function() {
                 menu.slideToggle();
                 $('.menu-icon').attr('src', 'images/menu.png');
 
             });
 
-            $('#close-menu').on('tap', function() {
+            $('.menu-close').on('tap', function() {
                 menu.slideToggle();
                 $('.menu-icon').attr('src', 'images/menu.png');
-
             });
 
 
@@ -265,14 +274,40 @@
             });
 
             function backgroundColorChange(element){
-                $(element).animate({backgroundColor: '#7EC300'}, 3000).delay(500).animate({backgroundColor: '#CC0066'}, 3000).delay(500).animate({backgroundColor: '#FF6600'}, 3000).delay(500).animate({backgroundColor:
-                        '#FF9900'}, 3000);
 
-                backgroundColorChange();
+                var colors = ['#7EC300', '#CC0066', '#FF6600', '#FF9900'];
+console.log('1');
+                $.each(colors, function(val){
+                    console.log('each');
+                    $(element).animate({backgroundColor: colors[val]}, 3000).delay(500);
+                });
+
+                fadeToGray(element);
+
+            }
+
+            function fadeToGray(element){
+                console.log(element);
+                if($(element).hasClass('menu-link')){
+                    console.log('link');
+                    $(element).animate({color: '#292929'}, 3000).delay(500);
+                }
+                else {
+                    $(element).animate({backgroundColor: '#292929'}, 3000).delay(500);
+                }
             }
 
             function textColorChange(element){
-                $(element).animate({color: '#33cc00'}, 1500).delay(500).animate({color: '#333'}, 1500).delay(500).animate({color: '#CC0066'}, 1500).delay(500).animate({color: '#292929'}, 1500);
+console.log('text');
+                var colors = ['#7EC300', '#CC0066', '#FF6600', '#FF9900'];
+
+                $.each(colors, function(val){
+                    console.log('text-color' + colors[val]);
+                    $(element).animate({color: colors[val]}, 3000).delay(500);
+                });
+
+                fadeToGray(element);
+
             }
 
             function headerScrollControl() {

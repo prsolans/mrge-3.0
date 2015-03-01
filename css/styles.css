@@ -70,12 +70,10 @@ header {
 
 .logo {float: left; margin: 0; padding: 0; width: 50%; height: 25px;}
 .logo img {margin-top: 9px; background-color: black; height: 25px; width:99px;}
-/*.logo img.overlay { background-color: black; height: 25px; width:99px; transition:background-color .4s;}*/
-/*.logo img.overlay:hover {background-color: #CC0066; transition:background-color .4s;}*/
 
-.menu-icon {float: right; height: 40px; margin-right: 3em; margin-bottom: 11px;}
-#close-menu {position: absolute; top: 25px; left: 80%;}
-a#close-menu, a:visited#close-menu  {color: #CC0066; text-decoration: none;}
+.menu-close, .menu-icon {float: right; height: 40px; margin-right: 3em; margin-bottom: 11px;}
+.menu-close {margin-right: .8em; margin-top: .1em; }
+
 #menu {background: #292929; clear: both; display: none; float: left; font-family: GothamLight; font-size: 2em; width: 50%;}
 #menu.menu-small, #menu.menu-small.closed { position:fixed;
     top:0;
@@ -95,7 +93,7 @@ a#close-menu, a:visited#close-menu  {color: #CC0066; text-decoration: none;}
 
 #menu.menu-small.open ul {margin-top: 55px;}
 
-#menu .menu-link {color: #CC0066; padding-bottom: 11px;position: relative;text-decoration: none; transition:color 1s;}
+#menu .menu-link {color: #292929; padding-bottom: 11px;position: relative;text-decoration: none; transition:color 1s;}
 
 #menu li {font-family: GothamLight; height: 2em; line-height: 2.5em; text-align: center; width: 100%; }
 .menu .menu-link:before { background-color: #FFF; content : ""; height : 1px; position : absolute; bottom : 0; left: 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform: scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; }

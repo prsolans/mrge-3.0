@@ -267,7 +267,7 @@
 
             $(window).resize(function () {
 
-                if ($(document).width() > '768') {
+                if ($(document).width() >= '768') {
                     menu.show().removeClass('menu-small').removeClass('open');
                     headerScrollControl();
                 }

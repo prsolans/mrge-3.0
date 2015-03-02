@@ -173,7 +173,6 @@ header {
 /* Three-image-grid Module */
 .project-image-three-up .small{width: 50%; float: left;}
 
-
 /* Features Board */
 .features-board-container{max-width: 1060px; width: 90%; padding: 0 5%; margin-left: auto; margin-right: auto;}
 .features-board-container .board-item-container{/*max-width: 340px; max-height: 520px;*/ width: 32.07%; height: auto; float: left; margin-right: 1.89%; margin-bottom: 1.89%; position: relative; }
@@ -340,9 +339,22 @@ header {
 }
 
 /* -----------[ PORTFOLIO GALLERY ]----------- */
+
 .project-thumb-container{ width: 33.33%; height: auto; float: left; position: relative;}
 .project-thumb-container a{height: 100%; left: 0; position: absolute; top: 0; width: 100%;}
-.project-thumb-container img { width: 100%; height: auto; display: block; border: 0;}
+.project-thumb-container img { width: 100%; height: auto; display: block; border: 0;-webkit-filter: brightness(1); filter: brightness(1); -webkit-transition: all 3s ease-in-out;
+    -moz-transition: all 3s ease-in-out;
+    -o-transition: all 3s ease-in-out;
+    -ms-transition: all 3s ease-in-out;
+    transition: all 3s ease-in-out;
+}
+.project-thumb-container img.blur{-webkit-filter: blur(2px) brightness(.9); filter: blur(2px) brightness(.9); -webkit-transition: all 3s ease-in-out;
+    -moz-transition: all 3s ease-in-out;
+    -o-transition: all 3s ease-in-out;
+    -ms-transition: all 3s ease-in-out;
+    transition: all 3s ease-in-out;
+}
+
 .project-thumb-container .project-info{position: absolute; top: 44%; left: 6%; color: #eee; font-weight: 100;}
 .project-thumb-container .project-info p{font-size: 1.25em; color: #999999; margin: .6em 0; }
 .project-thumb-container .project-info h3{text-transform: uppercase; font-size: 1.5em; font-family: 'GothamBold'; color: #3b3b3b;}

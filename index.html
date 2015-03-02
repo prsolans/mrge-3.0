@@ -7,6 +7,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"></script>
+    <script src="js/colorThief.js"></script>
+
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
 </head>
@@ -40,7 +42,7 @@
 
         <div id="project-gallery" class="group">
             <div class="project-thumb-container">
-                <img src="images/porfolio/ClientA/gallery-image.jpg" alt="" />
+                <img src="images/porfolio/ClientA/gallery-image.jpg" alt=""/>
                 <div class="project-info">
                     <h3>Tender Belly</h3>
                     <p>
@@ -52,7 +54,7 @@
                 <a href="#"></a>
             </div>
             <div class="project-thumb-container">
-                <img src="images/porfolio/ClientB/gallery-image.jpg" alt="" />
+                <img src="images/porfolio/ClientB/gallery-image.jpg" alt="" class="blur"/>
                 <div class="project-info">
                     <h3>harley-davidson</h3>
                     <p>
@@ -265,6 +267,43 @@
                 }
             });
 
+            $('.project-thumb-container').hover(
+
+                function () {
+//                    var image = $(this).find('img');
+//                    var imageSource = image.attr('src');
+
+                    var image = new Image();
+                    image = $(this).find('img');
+                    image.addClass('blur');
+
+                    var colorThief = new ColorThief();
+                    var color = colorThief.getColor(image[0], 1);
+
+var colors = 'rgba('+color[0] + ',' + color[1] + ',' + color[2] +')';
+
+                    console.log();
+                    $(this).find('img').css('border-size', '22px').css('border-color', colors);
+
+                    return;
+                },
+                function () {
+                    var image = $(this).find('img');
+                    image.removeClass('blur');
+
+                    return;
+                }
+            );
+
+            $('.project-thumb-container').on('tap',
+
+                    function () {
+                        var image = $(this).find('img');
+                        image.addClass('blur');
+                        return;
+                    }
+            );
+
             $(window).resize(function () {
 
                 if ($(document).width() >= '768') {
@@ -326,6 +365,11 @@
             }
 
             headerScrollControl();
+
+            /*
+
+
+             */
 
 
         });

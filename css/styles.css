@@ -106,7 +106,7 @@ header {
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
 
 @media (min-width: 48em){
-    header {width: 75%;position: fixed;left: 50%;margin: 0 0 0 -37.5%;}
+    /*header {width: 75%;position: fixed;left: 50%;margin: 0 0 0 -37.5%;}*/
     .header-small {padding: .5em 0;}
     .header-tall {padding: 3.5em 0;}
     .logo { width: 142px;}

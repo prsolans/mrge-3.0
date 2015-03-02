@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"></script>
     <script src="js/colorThief.js"></script>
+    <script src="js/colorComplement.js"></script>
 
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
@@ -269,8 +270,6 @@
 
             $('.project-thumb-container').hover(
 
-
-
                 function () {
 
                     var image = new Image();
@@ -291,6 +290,14 @@
                         backgroundColor: 'transparent',
                         opacity:0
                     }).appendTo($(this).css("position", "relative")).animate({opacity:.6, backgroundColor: colors}, 800);
+
+
+                    // complement
+                    var thisrgb = [color[0], color[1], color[2]];
+                    var complement = contrastingColor(thisrgb);
+                    var text = $(this).find('p');
+                    text.animate({'color': '#'+complement}, 600);
+
                     return;
                 },
                 function () {
@@ -305,11 +312,21 @@
                     var image = $(this).find('img');
 
                     var id = '#'+color[0]+'-'+color[1]+'-'+color[2];
-                    console.log(id);
                     $(id).animate({opacity: 0,}, 800, function() {
                         $(id).remove();
                     })
-//                    image.removeClass('blur');
+
+                    // complement
+                    var thisrgb = [color[0], color[1], color[2]];
+                    var complement = contrastingColor(thisrgb);
+                    var text = $(this).find('p');
+
+                    if(complement != 'fff') {
+                        text.animate({'color': '#999999'}, 600);
+                    }
+                    else {
+                        text.animate({'color': 'white'}, 600);
+                    }
 
                     return;
                 }

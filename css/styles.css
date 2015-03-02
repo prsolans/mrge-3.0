@@ -51,9 +51,16 @@ input::-moz-focus-inner /*Remove button padding in FF*/
 
 p{margin: 2.5em 0; line-height: 1.6em;}
 
+.button{border: 2px solid black; padding: 20px 15px 20px 25px; width: 285px; background: url("../images/ico-plus.png") no-repeat scroll 280px 20px rgba(0, 0, 0, 0); box-shadow: 5px 5px 0 black; display: block; cursor: pointer; transition: all 0.2s ease 0s; position: relative; font-family: 'GothamBold';}
+.button:hover{color: #fff;  }
+.button p{margin: 0; position: relative;}
+.btn-hover{bottom: 0; height: 0; left: 0; position: absolute; width: 100%; background: #000; transition: all 0.2s ease 0s; color: #fff; }
+.button:hover .btn-hover{height: 100%; }
+
 /* -----------[ PAGE STRUCTURE ]----------- */
 body{font: 100% 'GothamBook', Helvetica, Arial, Verdana, sans-serif; color: #292929; background-color: #ffffff; -webkit-text-size-adjust:100%; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased;  }
 .wrapper { margin: 0 auto; max-width: 75em; position: relative; }
+.heading-title.wrapper{max-width: 1160px; width: 95%; margin: 0 auto;}
 
 /* -----------[ HEADER ]----------- */
 
@@ -123,7 +130,21 @@ header {
 
 /* -----------[ HOME PAGE ]----------- */
 #home-container{margin-top: 14em;}
-#home-container .heading-title h1{font-family: 'Utopia'; font-size: 6.5em; line-height: .85em; margin-bottom: 2.644em; }
+#home-container .work-content{margin-bottom: 200px;}
+#home-container .heading-title h1{font-family: 'Utopia'; font-size: 6.5em; line-height: .85em; margin-bottom: 2.644em; width: 70%; max-width: 780px; }
+#home-container .hero-img{position: relative;}
+.image-detail-panel{background: #fff; bottom: -26.75%; position: absolute; transition: all 1s ease-in-out 0s; width: 555px; }
+.image-detail-panel.right{right: 3.5%;}
+.image-detail-panel.left{left: 3.5%;}
+.image-detail-panel .detail-content{margin: 50px 100px 50px 50px;}
+.image-detail-panel .detail-content h3{font-family: 'Utopia'; font-size: 4em; line-height: .9em;}
+.image-detail-panel .detail-content .description{font-size: 1.125em; margin: 40px 0;}
+#home-container hr{margin-bottom: 60px;}
+.thumbnails-list-container h4{text-align: center; font-family: 'GothamBold'; font-size: 1.25em;}
+.thumbnails-list{max-width: 1460px; margin: 0 auto; width: 90%; padding: 0 5%;}
+.thumbnails-list .thumbnail-container{float: left; cursor: pointer; width: 25%;}
+.thumbnails-list .thumbnail-container.bottom{margin-top: 30px;}
+.thumbnails-list-heading{width: 63%;}
 
 /* -----------[ PROJECT/CASE STUDY PAGE ]----------- */
 .project-title h1{font-family: 'Utopia'; font-size: 83px; text-align: center;}
@@ -141,6 +162,10 @@ header {
 #project-description-navigator-container .project-description{padding-left: 10.3%; width: 69.7675%; }
 .project-image-set .project-image{margin-bottom: 20px;}
 .project-image-set .project-image:last-child{margin-bottom: 0;}
+
+#carousel-wrapper{position: relative; border: 0; font-size: 40px;}
+#carousel-status{position: absolute; display: block; padding: 10px; border: 0; bottom: 0; margin: 0 15px 1.6em 0; right: 0; z-index: 10000; font-size: 1em; font-family: 'GothamLight'; text-align: center;}
+#carousel-status .slash{margin: 0 0.4em;}
 
 /* Collages */
 .project-image-collage, #asset-details{max-width: 1020px; width: 90%; padding: 0 5%; margin: 0 auto 100px auto;}
@@ -224,9 +249,23 @@ header {
     /*#asset-details, #project-details{max-width: 680px; padding: 0 5%;}*/
     /*.project-description{padding-left: 17.465%;}*/
 
+    #carousel-status { margin: 0 0.4em 0.2em 0; font-size: 0.8em; }
+    
     .features-board-container .board-item-container{width: 48.5%; margin-bottom: 3%; margin-right: 3%;}
     .features-board-container .board-item-container:nth-child(3n+3) {margin-right: 3%;}
     .features-board-container .board-item-container:nth-child(2n+2) {margin-right: 0;}
+}
+
+@media (max-width: 62.5em) {
+    .image-detail-panel{width: auto;}
+    .image-detail-panel, .image-detail-panel.right, .image-detail-panel.left{left: 0; right: 0; bottom: 0; position: relative; margin: 0 auto;}
+    .image-detail-panel .detail-content{margin: 50px auto; width: 405px;}
+    .thumbnails-list-container h4{margin-bottom: 20px;}
+    .thumbnails-list-container hr{display: none;}
+    .thumbnails-list{max-width: 405px; padding: 0;}
+    .thumbnails-list .thumbnail-container{width: 50%;}
+    .thumbnails-list .thumbnail-container.bottom{margin-top: 0;}
+    #home-container .heading-title h1{width: 90%; max-width: 490px; margin-left: auto; margin-right: auto;}
 }
 
 @media (max-width: 61.0625em) {
@@ -302,6 +341,9 @@ header {
     .project-tags, .caption-title{margin-left: 0;}
     .project-tags li{margin: 1.2% 0;}
     .project-description{padding-left: 0; width: auto;}
+
+    #carousel-status {font-size: 0.5em; }
+
     #asset-details, #project-details {margin-left: auto; margin-right: auto; max-width: 290px; padding: 0 5%; width: 90%; }
 
     .project-image-collage{max-width: 290px; /*max-height: 870px; overflow: hidden;*/ }
@@ -325,6 +367,14 @@ header {
 
     .hide-for-mobile{display: none;}
     .show-for-mobile{display: block;}
+}
+
+@media (max-width: 30em) {
+    .image-detail-panel .detail-content{width: 280px;}
+    .image-detail-panel .detail-content h3{font-size: 2.625em;}
+    #home-container .button{width: 230px; background-position: 230px 20px;}
+    .thumbnails-list{max-width: 280px; }
+    #home-container .heading-title h1{font-size: 3.25em; max-width: 250px; }
 }
 
 @media (max-width: 27.5em) {

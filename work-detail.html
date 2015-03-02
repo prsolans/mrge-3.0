@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Merge Design + Interactive</title>
     <link rel="stylesheet" href="css/fonts.css" media="screen" />
     <link rel="stylesheet" href="css/styles.css" media="screen" />
+    <link rel="stylesheet" href="css/layerslider.css" media="screen" />
 </head>
 <body>
     <header>
@@ -24,8 +25,27 @@
             <div class="project-by-line">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua, ad minim veniam.</p>
             </div>
-            <div class="hero-img">
+            <!--<div class="hero-img">
                 <img width="1200" height="783" alt="" class="" src="images/porfolio/project-hero.jpg" />
+            </div> -->
+            <div id="carousel-wrapper">
+                <div id="carousel" style="width:1200px;height:783px;max-width: 1200px;">
+                    <div class="ls-slide">
+                        <img src="images/porfolio/clientl/portfolio-01.jpg" class="ls-bg" />
+                    </div>
+                    <div class="ls-slide">
+                        <img src="images/porfolio/clientl/portfolio-02.jpg" class="ls-bg" />
+                    </div>
+                    <div class="ls-slide">
+                        <img src="images/porfolio/clientl/portfolio-03.jpg" class="ls-bg" />
+                    </div>
+                    <div class="ls-slide">
+                        <img src="images/porfolio/clientl/portfolio-04.jpg" class="ls-bg" />
+                    </div>
+                </div>
+                <div id="carousel-status">
+                    0<span class="slash">/</span>0
+                </div>
             </div>
             <div id="project-details" class="group work-content last-content">
                 <div class="project-tags-container mobile-full-width">
@@ -194,5 +214,29 @@
             </div>
         </div>
     </div>
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
+    <script src="js/greensock.js"></script>
+    <script src="js/layerslider.transitions.js"></script>
+    <script src="js/layerslider.kreaturamedia.jquery.js"></script>
+    <script src="js/site.js"></script>
+
+    <script>
+    jQuery("#carousel").layerSlider({
+        pauseOnHover: false,
+        autoPlayVideos: false,
+        animateFirstSlide: false,
+        autoStart: false,
+        navPrevNext: true,
+        hoverPrevNext: false,
+        navStartStop: false,
+        navButtons: false,
+        showCircleTimer: false,
+        skinsPath: 'css/skins/',
+        cbInit: carouselInit,
+        cbAnimStop: carouselAnim
+    });
+    </script>
 </body>
 </html>

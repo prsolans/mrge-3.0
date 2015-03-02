@@ -319,13 +319,15 @@
                     // complement
                     var thisrgb = [color[0], color[1], color[2]];
                     var complement = contrastingColor(thisrgb);
+
                     var text = $(this).find('p');
 
-                    if(complement != 'fff') {
-                        text.animate({'color': '#999999'}, 600);
+
+                    if(text.hasClass('white')) {
+                        text.animate({'color': 'white'}, 600);
                     }
                     else {
-                        text.animate({'color': 'white'}, 600);
+                        text.animate({'color': '#999999'}, 600);
                     }
 
                     return;

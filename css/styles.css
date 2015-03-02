@@ -94,7 +94,6 @@ header {
 #menu.menu-small.open ul {margin-top: 55px;}
 
 #menu .menu-link {color: #292929; padding-bottom: 11px;position: relative;text-decoration: none; transition:color 1s;}
-#menu ul {margin-right: 2em;}
 #menu li {font-family: GothamLight; height: 2em; line-height: 2.5em; text-align: center; width: 100%; }
 .menu .menu-link:before { background-color: #FFF; content : ""; height : 1px; position : absolute; bottom : 0; left: 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform: scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; }
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
@@ -107,11 +106,14 @@ header {
     #menu .menu-link:hover:before { opacity : 1.0; -webkit-transform: scaleX(1.5); transform : scaleX(1.5); }
     #menu .menu-link { color : black; }
     #menu li {display: inline-block; font-family: GothamBold; padding:0 15px; text-align: center; width: 5em;}
+    #menu ul {margin-right: 2em;}
+
 }
 
 @media screen AND (orientation:landscape){
-#menu.menu-small.open ul {margin-top: 0px !important;}
-#menu.menu-small.open ul li { line-height: 1.2em;}}
+    .menu-close {margin-bottom: 0;}
+#menu.menu-small.open ul {margin-top: 1.6em !important;}
+#menu.menu-small.open ul li { height: 1.3em;}}
 }
 /* -----------[ CONTENT ]----------- */
 /*h1{font-family: 'Utopia'; font-size: 5.1875em; text-align: center;}*/

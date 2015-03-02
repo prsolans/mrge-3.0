@@ -4,14 +4,29 @@
     <title>Merge Design + Interactive</title>
     <link rel="stylesheet" href="css/fonts.css" media="screen" />
     <link rel="stylesheet" href="css/styles.css" media="screen" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"></script>
+    <script src="js/colorThief.js"></script>
+    <script src="js/colorComplement.js"></script>
+    <script src="js/site.js"></script>
+
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
 </head>
 <body>
-    <header>
+    <header class="header-tall">
         <div class="wrapper">
+
             <div class="logo">
                 <a href="/">
-                    <img alt="Merge Design + Interactive" src="images/merge-logo.png" />
+                    <img alt="Merge Design + Interactive" src="images/merge-retina-mask.png" class="overlay" />
                 </a>
+            </div>
+            <img src="images/menu.png" width="30" height="30" class="menu-icon" />
+
+            <div id="menu">
+                <img src="images/menu-close.png" width="30" height="30" class="menu-close" />
+                <ul><li><a href="#" class="menu-link">Work</a></li><li><a href="#" class="menu-link">Expertise</a></li><li><a href="#" class="menu-link">Agency</a></li><li><a href="#" class="menu-link">Contact</a></li></ul>
             </div>
         </div>
     </header>

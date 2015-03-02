@@ -69,7 +69,7 @@ header {
     position:fixed;
     top:0;
     left:0;
-    z-index: 10000;
+    z-index: 20000;
 }
 
 .header-small {height: 40px; background-color: white; padding: .5em 1.25em; transition: 1s ;}
@@ -106,14 +106,17 @@ header {
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
 
 @media (min-width: 48em){
+    header {width: 75%;position: fixed;left: 50%;margin: 0 0 0 -37.5%;}
+    .header-small {padding: .5em 0;}
+    .header-tall {padding: 3.5em 0;}
     .logo { width: 142px;}
     #menu {background: white; clear: none; display: inline; font-family: Gotham-Bold; font-size: 1em; float: right; width: auto;}
     .menu-close, .menu-icon {display: none;}
     #menu .menu-link:before { background-color: #000; content : ""; height : 1px; position : absolute; bottom : 0; left : 0; width : 100%; opacity : 0; -webkit-transform: scaleX(.5); transform : scaleX(.5); -webkit-transition: ease-in-out .3s; transition : ease-in-out .3s; }
     #menu .menu-link:hover:before { opacity : 1.0; -webkit-transform: scaleX(1.5); transform : scaleX(1.5); }
     #menu .menu-link { color : black; }
-    #menu li {display: inline-block; font-family: GothamBold; padding:0 15px; text-align: center; width: 5em;}
-    #menu ul {margin-right: 2em;}
+    #menu li {display: inline-block; font-family: GothamBold; padding:0 0 0 30px; text-align: center; width: 5em;}
+    #menu ul {margin-right: 0; text-align: right;}
 
 }
 

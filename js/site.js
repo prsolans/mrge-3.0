@@ -52,22 +52,24 @@ $(document).ready(function () {
     });
 
     menuIcon.on('tap', function () {
-        if (!menu.hasClass('open')) {
-            logo.hide();
-            menu.addClass('open');
-            menu.show();
-            menuIcon.attr('src', 'images/menu-on.png').delay(350).fadeOut(800, function () {
-                menuIcon.css('background', '#292929').attr('src', 'images/menu-close.png');
-                menuIcon.show();
-            });
-            //textColorChange('.menu-link');
-            //backgroundColorChange('.menu-icon');
-        }
-        else {
+        if (menu.hasClass('open')) {
             logo.show();
             menu.removeClass('open');
             menu.hide();
             menuIcon.attr('src', 'images/menu.png');
+        }
+        else {
+            logo.hide();
+            menu.addClass('open');
+            menu.show();
+            menuIcon.attr('src', 'images/menu-on.png').delay(350).fadeOut(50, function () {
+                menuIcon.css('background', '#292929').attr('src', 'images/menu-close.png').fadeIn(200, function () {
+                    animateImageBackground(this);
+                });
+                //animateTextColor('.menu-link');
+            });
+
+
         }
     });
 

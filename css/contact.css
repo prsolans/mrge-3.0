@@ -1,0 +1,49 @@
+/* -----------[ CONTACT ]----------- */
+#contact-container .heading-title { max-width: 75em;}
+#contact-container .heading-title h1{font-family: 'Utopia'; font-size: 6.5em; line-height: .85em; margin-top: 2.644em; width: 70%; max-width: 780px; }
+#contact-container .secondary-heading-title h1{margin-top: 1em; margin-bottom: 1em; }
+#contact-container .heading-title p {font-family: 'GothamBook'; font-size: 2.2em; line-height: 1.2em; width: 70%; max-width: 780px; margin: 0.75em 0;}
+.contact-form input, .contact-form textarea { font-family: "GothamBook"; font-size: 1.25em; line-height: 2.5em; border: 0; border-bottom: 1px solid black; color: #666; }
+.contact-form textarea { outline: 1px solid black; border: 0; margin-top: 4em;}
+.contact-form {margin: 6em auto 3em auto;}
+.contact-form input#name { width: 47%; padding: 0 1%; margin-right: 1%; margin-bottom: 2em; }
+.contact-form input#email { width: 47%; padding: 0 1%; margin-left: 1%; margin-bottom: 2em; }
+.contact-form input#subject, #contact-container textarea { width: 98%; padding: 0 1%;  }
+.contact-form input::-webkit-input-placeholder, .contact-form text::-webkit-input-placeholder {color: #666;}
+.contact-form input:-moz-placeholder {color: #666;}
+.contact-form input::-moz-placeholder {color: #666;}
+.contact-form input:-ms-input-placeholder {color: #666;}
+.contact-form-submit {margin: 1em auto 4em auto;}
+.contact-locations .location { width: 100%; }
+.contact-locations .location-details { width: 33%; position: relative; overflow: visible; }
+.contact-locations img { width: 67%; }
+.contact-locations h2 { font-family: 'Utopia'; font-size: 6.5em; line-height: .85em; margin-top: 2em; margin-left: 40px; }
+.contact-locations .location-address { position: absolute; left: 40px; bottom: 3em; } 
+.contact-locations .location-address span { font-family: 'GothamBook'; font-size: 1.25em; color: #fff; }
+.contact-locations .location-address span.city { font-family: 'GothamBold'; text-transform: uppercase; margin-bottom: 2em; }
+.contact-social-links { border: 1px solid black; margin-bottom: 8em; }
+.contact-social-links .contact-social-link { width: 25%; text-align: center; padding: 2em 0em; cursor: pointer; }
+.contact-social-links .contact-social-link img { width: 62.5px; display: inline-block;}
+
+@media (max-width: 62.5em) {
+    #contact-container .heading-title h1{width: 90%; max-width: 490px; margin-left: auto; margin-right: auto;}
+    #contact-container .heading-title p{width: 90%; max-width: 490px; margin-left: auto; margin-right: auto;}
+    #contact-container .secondary-heading-title h1{width: 90%; max-width: 490px; margin-left: auto; margin-right: auto;}
+}
+
+@media (max-width: 48em) {
+    .contact-locations .location-details { width: 100%; position: relative; overflow: visible; }
+    .contact-locations img { width: 100%; }
+    .contact-locations h2 {font-size: 6.5em; margin-top: 2em;}
+}
+
+@media (max-width: 39.5em) {
+    .contact-locations h2 {margin-top: 1em;}
+}
+
+@media (max-width: 30em) {
+    .contact-form input#name { width: 98%; padding: 0 1%; margin-right: 0%; margin-bottom: 2em; }
+    .contact-form input#email { width: 98%; padding: 0 1%; margin-left: 0%; margin-bottom: 2em; }
+    .contact-locations .location-details, .contact-locations img { height: 400px !important;}
+    .contact-locations h2 {font-size: 3.25em; margin-top: 1em;}
+}

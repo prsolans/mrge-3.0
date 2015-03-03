@@ -19,17 +19,29 @@ jQuery(document).ready(function ($) {
         var thumbnaillist = $(this).parent().attr('id');
 
         var index = $(this).index("#" + thumbnaillist + " .thumbnail-container") + 1;
-        var setIndex = Math.ceil(index / 4) * 4;
+        var setIndex = Math.ceil(index / 4);
+        var setMax = Math.ceil(($("#" + thumbnaillist + " .thumbnail-container").length) / 4);
 
-        $("#" + thumbnaillist + " .thumbnail-container:lt(" + setIndex + ")").each(function () {
-            $(this).slideUp();
-        });
+        var csFirst = (setIndex * 4) - 3;
+        var csLast = (setIndex * 4);
 
-        if (setIndex < 4) {
-            $("#" + thumbnaillist + " .thumbnail-container:lt(" + (setIndex + 1) + ")").slideIn();
+        TweenMax.staggerTo("#" + thumbnaillist + " .thumbnail-container:nth-child(n+" + csFirst + "):nth-child(-n+" + csLast + ")", 1, { className: '-=animate', delay: 0.5, ease: Elastic.easeOut, force3D: true }, 0.2);
+        for (var i = csFirst; i <= csLast; i++) {
+            $("#" + thumbnaillist + " .thumbnail-container:nth-child(" + i + ")").hide();
+        }
+
+        var nsFirst = ((setIndex + 1) * 4) - 3;
+        var nsLast = ((setIndex + 1) * 4);
+
+        if (setIndex < setMax) {
+            for (var i = nsFirst; i <= nsLast; i++) {
+                $("#" + thumbnaillist + " .thumbnail-container:nth-child(" + i + ")").show();
+            }
+            TweenMax.staggerTo("#" + thumbnaillist + " .thumbnail-container:nth-child(n+" + nsFirst + "):nth-child(-n+" + nsLast + ")", 1, { className: '+=animate', delay: 0.5, ease: Elastic.easeOut, force3D: true }, 0.2);
         }
         else {
-            $("#" + thumbnaillist + " .thumbnail-container:lt(" + (1) + ")").slideIn();
+            $("#" + thumbnaillist + " .thumbnail-container:lt(4)").show();
+            TweenMax.staggerTo("#" + thumbnaillist + " .thumbnail-container:lt(4)", 1, { className: '+=animate', delay: 0.5, ease: Elastic.easeOut, force3D: true }, 0.2);
         }
     });
 });

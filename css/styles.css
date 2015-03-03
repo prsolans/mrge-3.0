@@ -91,10 +91,10 @@ header .wrapper {width: 280px;}
 
 #menu {background: #292929; clear: both; display: none; float: left; font-family: GothamLight; font-size: 2em; width: 50%;}
 #menu.menu-small, #menu.menu-small.closed { position:fixed; top:0; left:0; opacity: 0; visibility: hidden; height: 100%; width: 100%; transition: opacity 0.5s, visibility 0s 0.5s;  }
-#menu.menu-small.open { opacity: 1; visibility: visible; background-color: white; transition: opacity 0.5s;}
-}
+#menu.menu-small.open { opacity: 1; visibility: visible; background-color: white; transition: opacity 0.5s; margin-top: 50px;}
 
-#menu.menu-small.open ul {margin-top: 55px; clear: both; height: 100%;}
+
+#menu.menu-small.open ul {clear: both; height: 100%;}
 
 #menu #menu-content {width: 280px; margin: 0 auto;}
 #menu .menu-link {color: #292929; padding-bottom: 11px;position: relative;text-decoration: none; transition:color 1s;}
@@ -378,18 +378,8 @@ header .wrapper {width: 280px;}
 
 .project-thumb-container{ width: 33.33%; height: auto; float: left; position: relative;}
 .project-thumb-container a{height: 100%; left: 0; position: absolute; top: 0; width: 100%;}
-.project-thumb-container img { width: 100%; height: auto; display: block; border: 0;-webkit-filter: brightness(1); filter: brightness(1); -webkit-transition: all 3s ease-in-out;
-    -moz-transition: all 3s ease-in-out;
-    -o-transition: all 3s ease-in-out;
-    -ms-transition: all 3s ease-in-out;
-    transition: all 3s ease-in-out;
-}
-.project-thumb-container img.blur{-webkit-filter: blur(2px) brightness(.9); filter: blur(2px) brightness(.9); -webkit-transition: all 3s ease-in-out;
-    -moz-transition: all 3s ease-in-out;
-    -o-transition: all 3s ease-in-out;
-    -ms-transition: all 3s ease-in-out;
-    transition: all 3s ease-in-out;
-}
+.project-thumb-container img { width: 100%; height: auto; display: block;}
+
 
 .project-thumb-container .project-info{position: absolute; top: 44%; left: 6%; color: #eee; font-weight: 100; z-index: 5000;}
 .project-thumb-container .project-info p{font-size: 1.25em; color: #999999; margin: .6em 0; }

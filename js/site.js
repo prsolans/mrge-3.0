@@ -7,6 +7,9 @@
 $(document).ready(function () {
 
     var menu = $('#menu');
+    var logo = $('.logo');
+    var menuIcon = $('.menu-icon');
+
     var screenWidth = $(window).width();
 
     $(".overlay").mouseenter(function(){
@@ -21,39 +24,61 @@ $(document).ready(function () {
         someElement.data('timeoutId', timeoutId);
     });
 
-    $('.menu-icon').on('click', function () {
+    menuIcon.on('click', function () {
 
-        $('.menu-icon').attr('src', 'images/menu-on.png');
-        menu.slideToggle();
 
-        if($(menu).is(':visible')){
+        if(!menu.hasClass('open')) {
+            logo.hide();
             menu.addClass('open');
+            menu.show();
+            menuIcon.attr('src', 'images/menu-on.png').fadeOut(800, function(){
+                console.log('1');
+                menuIcon.css('background', '#292929').attr('src', 'images/menu-close.png');
+                menuIcon.show();
+            });
             textColorChange('.menu-link');
-            backgroundColorChange('.menu-close');
+            backgroundColorChange('.menu-icon');
+        }
+        else{
+            logo.show();
+            menu.removeClass('open');
+            menu.hide();
+            menuIcon.attr('src', 'images/menu.png');
         }
     });
 
-    $('.menu-icon').on('tap', function () {
+    menuIcon.on('tap', function () {
 
-        $('.menu-icon').attr('src', 'images/menu-on.png');
-        menu.slideToggle();
-
-        if($(menu).is(':visible')){
+        if(!menu.hasClass('open')) {
+            logo.hide();
             menu.addClass('open');
+            menu.show();
+            menuIcon.attr('src', 'images/menu-on.png').fadeOut(800, function(){
+                console.log('1');
+                menuIcon.css('background', '#292929').attr('src', 'images/menu-close.png');
+                menuIcon.show();
+            });
             textColorChange('.menu-link');
-            backgroundColorChange('#close-menu');
+            backgroundColorChange('.menu-icon');
+        }
+        else{
+            logo.show();
+            menu.removeClass('open');
+            menu.hide();
+            menuIcon.attr('src', 'images/menu.png');
         }
     });
 
     $('.menu-close').on('click', function() {
         menu.slideToggle();
-        $('.menu-icon').attr('src', 'images/menu.png');
+       menuIcon.attr('src', 'images/menu.png');
+       logo.show();
 
     });
 
     $('.menu-close').on('tap', function() {
         menu.slideToggle();
-        $('.menu-icon').attr('src', 'images/menu.png');
+        menuIcon.attr('src', 'images/menu.png');
     });
 
 
@@ -134,7 +159,9 @@ $(document).ready(function () {
 
     $(window).resize(function () {
         if ($(document).width() >= '1024') {
+            logo.show();
             menu.show().removeClass('menu-small', 0).removeClass('open', 0);
+            $('.menu-link').css('color', 'rgb(41,41,41)');
             headerScrollControl();
         }
         else {

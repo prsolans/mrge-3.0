@@ -1,5 +1,18 @@
 /*
 MERGE DESIGN + INTERACTIVE 3.0
+
+Target screen sizes
+------------------------------
+    Desktop
+    Width: 95%
+    Max-width: 1160px
+
+    Tablet-Portrait (768px/ 48em)
+    Width: 405px (SUBJECT TO CHANGE based on real-content text. Will be finalized once we have content to play around with.)
+
+    Mobile (480px/30em):
+    Width: 280px
+------------------------------
 */
 
 /* ----------[ GENERAL ]------------------------------- */
@@ -118,7 +131,7 @@ header .wrapper {width: 280px;}
 /* -----------[ HOME PAGE ]----------- */
 #home-container{margin-top: 14em;}
 #home-container .work-content{margin-bottom: 200px;}
-#home-container .heading-title h1{font-family: 'Utopia'; font-size: 6.5em; line-height: .85em; margin-bottom: 2.644em; width: 70%; max-width: 780px; }
+#home-container .heading-title h1{font-family: 'Utopia'; font-size: 6.5em; line-height: .85em; margin-bottom: 70px; width: 80%; max-width: 800px; }
 #home-container .hero-img{position: relative;}
 .image-detail-panel{background: #fff; bottom: -26.75%; position: absolute; transition: all 1s ease-in-out 0s; width: 555px; }
 .image-detail-panel.right{right: 3.5%;}
@@ -256,6 +269,7 @@ header .wrapper {width: 280px;}
     .thumbnails-list .thumbnail-container{width: 50%;}
     .thumbnails-list .thumbnail-container.animate.bottom{margin-top: 0;}
     .inner-wrapper-mobile{margin-left: auto; margin-right: auto; width: 405px; }
+    #home-container .work-content{margin-bottom: 110px;}
 }
 
 @media (max-width: 61.0625em) {
@@ -265,35 +279,13 @@ header .wrapper {width: 280px;}
 
 @media (/*max-width: 65em*/ max-width: 48em) {
     .inner-wrapper{margin-left: auto; margin-right: auto; width: 405px; }
+    #home-container .heading-title h1{width: 100%; overflow: hidden;}
     .project-image-collage{/*max-width: 630px; max-height: 1260px; overflow: hidden;*/ max-width: 680px;}
     .project-image-collage .left-column, .project-image-collage .right-column {float: none;}
     .project-image-collage .right-column {width: 100%;}
     .project-image-collage .top-space{margin-top: 0;}
 
-
-    /* ORIGINAL RESPONSIVENESS - MIMIC OF http://www.hornallanderson.com/casestudy/la-brea-bakery */
-    /* 1 */
-    /*.project-image-collage.rectangle-long-left .left-column {max-height: 315px; width: 50%; margin-left: 50%; }
-    .project-image-collage.rectangle-long-left .right-column img{width: 50%;}
-    .project-image-collage img.large, .project-image-collage.rectangle-long-left .right-column img.large{width: 100%;}*/
-    
-    /* 2 */
-    /*.project-image-collage.rectangle-long-top .bottom-row img.small{float: right; width: 50%;}*/
-
-    /* 3 */
-    /*.project-image-collage.rectangle-long-bottom .top-row {min-height: 0; }
-    .project-image-collage.rectangle-long-bottom .top-row img.small{margin-top: 0; width: 50%;}
-    .project-image-collage.rectangle-long-bottom .top-row img.large{float: left; }
-    .project-image-collage.rectangle-long-bottom .bottom-row img {float: left; }*/
-
-    /* 4 */
-    /*.project-image-collage.rectangle-long-right .left-column img.small{float: none; margin-left: 50%; width: 50%;}
-    .project-image-collage.rectangle-long-right .right-column {width: 50%;}*/
-
-
-
     /* NEW RESPONSIVENESS - All equal widths, stacked*/
-
     .project-image-collage img.small{width: 100%;}
 
     /* 1 */
@@ -361,12 +353,12 @@ header .wrapper {width: 280px;}
 }
 
 @media (max-width: 30em) {
-    .inner-wrapper{width: 280px; }
+    .inner-wrapper, .inner-wrapper-mobile{width: 280px; }
     /*.image-detail-panel .detail-content{width: 280px;}*/
     .image-detail-panel .detail-content h3{font-size: 2.625em;}
     #home-container .button{width: 230px; background-position: 230px 20px;}
     /*.thumbnails-list{max-width: 280px; }*/
-    /*#home-container .heading-title h1{font-size: 3.25em; max-width: 250px; }*/
+    #home-container .heading-title h1{font-size: 3.25em; }
 }
 
 @media (max-width: 27.5em) {

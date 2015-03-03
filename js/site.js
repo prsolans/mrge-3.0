@@ -30,7 +30,6 @@ $(document).ready(function () {
             menu.addClass('open');
             textColorChange('.menu-link');
             backgroundColorChange('.menu-close');
-
         }
     });
 
@@ -58,7 +57,7 @@ $(document).ready(function () {
     });
 
 
-    if (screenWidth < '768') {
+    if (screenWidth <= '1024') {
         menu.addClass('menu-small');
     }
 
@@ -139,7 +138,7 @@ $(document).ready(function () {
     );
 
     $(window).resize(function () {
-        if ($(document).width() >= '768') {
+        if ($(document).width() >= '1024') {
             menu.show().removeClass('menu-small').removeClass('open');
             headerScrollControl();
         }
@@ -154,11 +153,8 @@ $(document).ready(function () {
 });
 
 // animation functions
-
 function backgroundColorChange(element){
     var colors = ['#7EC300', '#CC0066', '#FF6600', '#FF9900'];
-    colors = shuffle(colors);
-    colors = colors.slice(2);
     $.each(colors, function(val){
         $(element).animate({backgroundColor: colors[val]}, 3000).delay(500);
     });
@@ -187,7 +183,7 @@ function headerScrollControl() {
 
         var screenWidth = $(window).width();
 
-        if(screenWidth > 768) {
+        if(screenWidth >= 1024) {
             if ($(document).scrollTop() > 0) {
                 $('header').removeClass('header-tall').addClass('header-small');
             }

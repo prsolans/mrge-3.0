@@ -9,64 +9,61 @@ $(document).ready(function () {
     var menu = $('#menu');
     var logo = $('.logo');
     var menuIcon = $('.menu-icon');
+    var menuLink = $('.menu-link');
 
     var screenWidth = $(window).width();
 
     if (screenWidth <= '1024') {
         menu.addClass('menu-small');
+        menuLink.addClass('menu-small-open');
     }
 
 
     // logo animation
-    $(".overlay").mouseenter(function(){
-        clearTimeout($(this).data('timeoutId'));
-        //backgroundColorChange('.overlay');
-    }).mouseleave(function(){
-        var someElement = $(this),
-            timeoutId = setTimeout(function(){
-                fadeToGray('.overlay');
-            }, 650);
-        //set the timeoutId, allowing us to clear this trigger if the mouse comes back over
-        someElement.data('timeoutId', timeoutId);
-    });
+    logo.hover(
+        function () {
+            animateImageBackground(this);
+        },
+        function () {
+            animateToGray(this);
+        });
 
     // menu animation
     menuIcon.on('click', function () {
-
-        if(menu.hasClass('open')) {
+        if (menu.hasClass('open')) {
             logo.show();
             menu.removeClass('open');
             menu.hide();
             menuIcon.attr('src', 'images/menu.png');
         }
-        else{
+        else {
             logo.hide();
             menu.addClass('open');
             menu.show();
-            menuIcon.attr('src', 'images/menu-on.png').delay(350).fadeOut(500, function(){
-                menuIcon.css('background', '#292929').attr('src', 'images/menu-close.png').fadeIn(200, function(){
-                    //textColorChange('.menu-link');
-                    //backgroundColorChange('.menu-icon');
+            menuIcon.attr('src', 'images/menu-on.png').delay(350).fadeOut(50, function () {
+                menuIcon.css('background', '#292929').attr('src', 'images/menu-close.png').fadeIn(200, function () {
+                    animateImageBackground(this);
                 });
+                //animateTextColor('.menu-link');
             });
+
 
         }
     });
 
     menuIcon.on('tap', function () {
-
-        if(!menu.hasClass('open')) {
+        if (!menu.hasClass('open')) {
             logo.hide();
             menu.addClass('open');
             menu.show();
-            menuIcon.attr('src', 'images/menu-on.png').delay(350).fadeOut(800, function(){
+            menuIcon.attr('src', 'images/menu-on.png').delay(350).fadeOut(800, function () {
                 menuIcon.css('background', '#292929').attr('src', 'images/menu-close.png');
                 menuIcon.show();
             });
             //textColorChange('.menu-link');
             //backgroundColorChange('.menu-icon');
         }
-        else{
+        else {
             logo.show();
             menu.removeClass('open');
             menu.hide();
@@ -76,7 +73,6 @@ $(document).ready(function () {
 
     // portfolio animation
     $('.project-thumb-container').hover(
-
         function () {
 
             var image = new Image();
@@ -85,10 +81,10 @@ $(document).ready(function () {
             var colorThief = new ColorThief();
             var color = colorThief.getColor(image[0], 1);
 
-            var colors = 'rgba('+color[0] + ',' + color[1] + ',' + color[2] +')';
+            var colors = 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ')';
 
             var timing = 350;
-            $("<div id='"+color[0]+"-"+color[1]+"-"+color[2]+"'/>").css({
+            $("<div id='" + color[0] + "-" + color[1] + "-" + color[2] + "'/>").css({
                 position: "absolute",
                 width: "100%",
                 height: "100%",
@@ -96,15 +92,15 @@ $(document).ready(function () {
                 top: 0,
                 zIndex: 1000,  // to be on the safe side
                 backgroundColor: 'transparent',
-                opacity:0,
+                opacity: 0,
                 cursor: 'pointer'
-            }).appendTo($(this).css("position", "relative")).animate({opacity:.6, backgroundColor: colors}, timing);
+            }).appendTo($(this).css("position", "relative")).animate({opacity: .6, backgroundColor: colors}, timing);
 
             // complement
             var thisrgb = [color[0], color[1], color[2]];
             var complement = contrastingColor(thisrgb);
             var text = $(this).find('p');
-            text.animate({'color': '#'+complement}, timing);
+            text.animate({'color': '#' + complement}, timing);
 
             return;
         },
@@ -115,19 +111,19 @@ $(document).ready(function () {
             var colorThief = new ColorThief();
             var color = colorThief.getColor(image[0], 1);
 
-            var colors = 'rgba('+color[0] + ',' + color[1] + ',' + color[2] +')';
+            var colors = 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ')';
             var image = $(this).find('img');
 
-            var id = '#'+color[0]+'-'+color[1]+'-'+color[2];
+            var id = '#' + color[0] + '-' + color[1] + '-' + color[2];
             var timing = 350;
-            $(id).animate({opacity: 0,}, timing, function() {
+            $(id).animate({opacity: 0,}, timing, function () {
                 $(id).remove();
             })
 
             // complement
             var text = $(this).find('p');
 
-            if(text.hasClass('white')) {
+            if (text.hasClass('white')) {
                 text.animate({'color': 'white'}, timing);
             }
             else {
@@ -160,37 +156,98 @@ $(document).ready(function () {
 
 // animation functions
 
-function backgroundColorChange(element){
-    var colors = ['#7EC300', '#CC0066', '#FF6600', '#FF9900'];
-    $.each(colors, function(val){
-        $(element).animate({backgroundColor: colors[val]}, 3000).delay(500);
+function animateImageBackground(element) {
+
+    var mouseover = true;
+    $(element).mouseenter(function () {
+        mouseover = true;
+    })
+    $(element).mouseleave(function () {
+        mouseover = false;
+        animateToGray(element);
+        return;
     });
-    fadeToGray(element);
+
+    var colors = ['#7EC300', '#CC0066', '#FF6600', '#FF9900'];
+
+    if($(element).hasClass('logo')) {
+        $(element).animate({backgroundColor: '#33cc00'}, 500, function () {
+            if (mouseover == true) {
+                $(element).animate({backgroundColor: '#' + colors[0]}, 3000, function () {
+                    if (mouseover == true) {
+                        $(element).animate({backgroundColor: '#' + colors[1]}, 3000, function () {
+                            if (mouseover == true) {
+                                $(element).animate({backgroundColor: '#' + colors[2]}, 3000, function () {
+                                    if (mouseover == true) {
+                                        $(element).animate({backgroundColor: '#' + colors[3]}, 3000, function () {
+                                            animateToGray(element);
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+
+        });
+    }
+
+    if ($(element).hasClass('menu-icon')) {
+        $(element).animate({backgroundColor: '#33cc00'}, 500, function () {
+            $(element).animate({backgroundColor: '#' + colors[0]}, 3000, function () {
+                $(element).animate({backgroundColor: '#' + colors[1]}, 3000, function () {
+                    $(element).animate({backgroundColor: '#' + colors[2]}, 3000, function () {
+                        $(element).animate({backgroundColor: '#' + colors[3]}, 3000, function () {
+                            animateToGray(element);
+                        });
+                    });
+                });
+            });
+        });
+
+
+    }
 }
 
-function fadeToGray(element){
-    if($(element).hasClass('menu-link')){
-        $(element).animate({color: '#292929'}, 3000).delay(500);
+function animateTextColor(element){
+    var colors = ['#7EC300', '#CC0066', '#FF6600', '#FF9900'];
+
+    $(element).animate({color: '#33cc00'}, 500, function () {
+        console.log('1');
+        return;
+        $(element).animate({color: '#' + colors[0]}, 3000, function () {
+            console.log('2');
+            $(element).animate({color: '#' + colors[1]}, 3000, function () {
+                console.log('3');
+                $(element).animate({color: '#' + colors[2]}, 3000, function () {
+                    console.log('4');
+                    $(element).animate({color: '#' + colors[3]}, 3000, function () {
+                        console.log('5');
+                        animateToGray(element);
+                    });
+                });
+            });
+        });
+    });
+}
+
+
+function animateToGray(element) {
+    if ($(element).hasClass('menu-link')) {
+        $(element).animate({color: '#292929'}, 500).delay(500);
     }
     else {
-        $(element).animate({backgroundColor: '#292929'}, 3000).delay(500);
+        $(element).animate({backgroundColor: '#292929'}, 500).delay(500);
     }
-}
-
-function textColorChange(element){
-    var colors = ['#7EC300', '#CC0066', '#FF6600', '#FF9900'];
-    $.each(colors, function(val){
-        $(element).animate({color: colors[val]}, 3000).delay(500);
-    });
-    fadeToGray(element);
 }
 
 function headerScrollControl() {
-    $(window).scroll(function(){
+    $(window).scroll(function () {
 
         var screenWidth = $(window).width();
 
-        if(screenWidth >= 1024) {
+        if (screenWidth >= 1024) {
             if ($(document).scrollTop() > 0) {
                 $('header').removeClass('header-tall').addClass('header-small');
             }
@@ -204,24 +261,9 @@ function headerScrollControl() {
     });
 }
 
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex ;
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-    return array;
-}
-
 
 // carousel functions
-function carouselInit(data){
+function carouselInit(data) {
     $('#carousel-status').html('1<span class="slash">/</span>' + $('.ls-slide').length);
     layerSliderTransitions.t2d[0].transition.duration = 500;
     layerSliderTransitions.t2d[0].transition.easing = 'easeInOutCirc';

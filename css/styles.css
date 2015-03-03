@@ -83,8 +83,8 @@ header .wrapper {width: 280px;}
 .header-small {height: 40px; background-color: white; padding: .5em 0; transition: 1s ;}
 .header-tall {height: 35px; background-color: white; padding: .5em 0; transition: 1s;}
 
-.logo {float: left; margin: 0; padding: 0; height: 30px;}
-.logo img {margin-top: 9px; background-color: black; height: 30px; }
+.logo {float: left; margin: 0; padding: 0; height: 35px; margin-top:6px; background-color: #292929;}
+.logo img {height: 35px; margin: 0; padding: 0;}
 
 .menu-close {float: right; height: 40px; margin-right: .8em; margin-top: .1em;  cursor:pointer;}
 .menu-icon {float: right; height: 40px; margin-bottom: 11px; cursor:pointer;}
@@ -97,7 +97,7 @@ header .wrapper {width: 280px;}
 #menu.menu-small.open ul {clear: both; height: 100%;}
 
 #menu #menu-content {width: 280px; margin: 0 auto; height: 90%;}
-#menu .menu-link {color: #292929; padding-bottom: 11px;position: relative;text-decoration: none; transition:color 1s;}
+#menu .menu-link {color: #292929; padding-bottom: 11px;position: relative;text-decoration: none; }
 #menu li {font-family: GothamLight; height: 20%; line-height: 2.5em; text-align: center; width: 100%; }
 .menu .menu-link:before { background-color: #FFF; content : ""; height : 1px; position : absolute; bottom : 0; left: 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform: scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; }
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
@@ -108,7 +108,7 @@ header .wrapper {width: 280px;}
 @media (min-width: 64em){
     .header-small {padding: .5em 0;}
     .header-tall {padding: 3.5em 0 0 0;}
-    .logo { width: 142px;}
+    .logo { height: 35px;}
     .menu-close, .menu-icon {display: none;}
 
     #menu {background: white; clear: none; display: inline; font-family: Gotham-Bold; font-size: 1em; float: right; width: auto;}

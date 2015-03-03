@@ -1,0 +1,164 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Merge Design + Interactive</title>
+    <link rel="stylesheet" href="css/fonts.css" media="screen" />
+    <link rel="stylesheet" href="css/styles.css" media="screen" />
+    <link rel="stylesheet" href="css/contact.css" media="screen" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+    <script src="js/site.js"></script>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+</head>
+<body>
+    <header class="header-tall">
+        <div class="inner-wrapper">
+
+            <div class="logo">
+                <a href="index.html">
+                    <img alt="Merge Design + Interactive" src="images/merge-retina-mask.png" class="overlay" />
+                </a>
+            </div>
+            <img src="images/menu.png" width="30" height="30" class="menu-icon" />
+
+            <div id="menu">
+                <div id="menu-content">
+                    <ul>
+                        <li><a href="work-detail.html" class="menu-link">Work</a></li>
+                        <li><a href="#" class="menu-link">Expertise</a></li>
+                        <li><a href="#" class="menu-link">Agency</a></li>
+                        <li>
+                            <a href="#" class="menu-link">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div>
+        <div id="contact-container">
+            <div class="heading-title wrapper">
+                <h1>Talk to us!</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="contact-form wrapper">
+                <input type="text" name="name" id="name" placeholder="Name*" class="fl" />
+                <input type="text" name="email" id="email" placeholder="Email*" class="fl" />
+                <input type="text" name="subject" id="subject" placeholder="Subject*" class="fl" />
+                <textarea name="message" placeholder"Enter your message" class="fl">Enter your message</textarea>
+                <div class="clear"></div>
+            </div>
+            <div class="contact-form-submit wrapper">
+                <a class="button fr">
+                    <div class="btn-hover"></div>
+                    <p>Submit</p>
+                </a>
+                <div class="clear"></div>
+            </div>
+
+            <div class="contact-locations colored-boxes wrapper">
+                <div class="location colored-box fl" style="background-color: #33cc99;">
+                    <div class="location-details colored-box-side fl">
+                        <h2 style="color: #ffff33;">Chicago</h2>
+
+                        <div class="location-address">
+                            <span class="city">Chicago</span><br/><br/>
+                            <span class="address">600W Van Buren St</span><br/>
+                            <span class="address">Suite 730</span><br/>
+                            <span class="address">Chicago, IL 60607</span><br/><br/>
+
+                            <span class="phone">312 787 7667 <strong>Ph</strong></span><br/>
+                            <span class="fax">312 324 3319 <strong>F</strong></span><br/>
+                        </div>
+
+                    </div>
+                    <img class="colored-box-image fl" alt="" src="images/contact/chicago.jpg" />
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="heading-title secondary-heading-title wrapper">
+                <h1>See what <br/>we're up to.</h1>
+            </div>
+            <div class="contact-social-links wrapper">
+                <a class="contact-social-link fl">
+                    <img class="" alt="" src="images/contact/facebook-mask.png" style="background-color: black;" />
+                </a>
+                <a class="contact-social-link fl">
+                    <img class="" alt="" src="images/contact/twitter-mask.png" style="background-color: black;" />
+                </a>
+                <a class="contact-social-link fl">
+                    <img class="" alt="" src="images/contact/instagram-mask.png" style="background-color: black;" />
+                </a>
+                <a class="contact-social-link contact-social-link-last fl">
+                    <img class="" alt="" src="images/contact/linkedin-mask.png" style="background-color: black;" />
+                </a>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="always-visible">
+                <div class="copyright">&copy;
+                <script>document.write(new Date().getFullYear())</script> MERGE
+                </div>
+                <div class="information">
+                    + 600 W Van Buren St, Suite 730, Chicago,, IL 60607 + 312.787 7667 + info@mergeworld.com
+                </div>
+                <div class="social">
+                   FB | TW | LI
+                </div>
+            </div>
+            <div class="hidden-footer">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+    <script>
+       
+        $(document).ready(function () {
+
+            function onWindowResize() {
+                $('.colored-box-image').each(function() {
+                    $(this).prev().height($(this).height());
+                });
+
+                var windowWidth = window.outerWidth != 0 ? window.outerWidth : $(window).width();
+
+                if (windowWidth > 480) {
+                    $('.contact-social-links').each(function() {
+                        var width = (($(this).width()-3) /  4);
+
+                        $(this).find('.contact-social-link').width(width);
+                        $(this).find('.contact-social-link').css('border-right', '1px solid black');
+                        $(this).find('.contact-social-link-last').css('border-right', '0');
+                    });
+                } else {
+                    $('.contact-social-links').each(function() {
+                        var width = (($(this).width()-1) /  2);
+
+                        $(this).find('.contact-social-link').width(width);
+                        $(this).find('.contact-social-link').css('border-right', '0');
+                        $(this).find('.contact-social-link:nth-child(1)').css('border-bottom', '1px solid black');
+                        $(this).find('.contact-social-link:nth-child(2)').css('border-bottom', '1px solid black');
+                        $(this).find('.contact-social-link:even').css('border-right', '1px solid black');
+                    });
+                }
+
+
+            }
+
+            onWindowResize();
+            $(window).resize(onWindowResize);
+
+           )};
+
+
+        
+    </script>
+
+</body>
+</html>

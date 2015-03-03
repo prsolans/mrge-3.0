@@ -143,8 +143,8 @@ header .wrapper {width: 280px;}
 .image-detail-panel .detail-content .description{font-size: 1.125em; margin: 40px 0;}
 #home-container hr{margin-bottom: 60px;}
 .thumbnails-list-container h4{text-align: center; font-family: 'GothamBold'; font-size: 1.25em;}
-.thumbnails-list{max-width: 1460px; margin: 0 auto; width: 90%; padding: 0 5%; height: 27%; max-height: 385px; overflow: hidden;}
-.thumbnails-list .thumbnail-container{float: left; cursor: pointer; width: 25%; opacity: 0; display: block; transition: all 1s ease 0s; margin-top: 70px; }
+.thumbnails-list{max-width: 1460px; margin: 0 auto; width: 90%; padding: 0 5%; max-height: 385px; overflow: hidden;}
+.thumbnails-list .thumbnail-container{float: left; cursor: pointer; width: 25%; opacity: 0; display: block; transition: all 1s ease 0s; margin-top: 70px;}
 .thumbnails-list .thumbnail-container.animate{ animation: 0.65s ease 0s normal forwards 1 running moveUp; opacity: 1; margin-top: 0; }
 .thumbnails-list .thumbnail-container.animate.bottom{margin-top: 20px;}
 .thumbnails-list-heading{width: 63%;}
@@ -309,6 +309,7 @@ header .wrapper {width: 280px;}
     .project-image-collage.rectangle-long-right .left-column img.small{float: none;}
     .project-image-collage.rectangle-long-right .left-column{width: 100%;}
     .project-image-collage.rectangle-long-right .right-column{width: 100%;}
+    .thumbnails-list{max-height: 405px;}
 }
 
 @media (max-width: 46.1875em) {
@@ -361,6 +362,7 @@ header .wrapper {width: 280px;}
     #home-container .button{width: 230px; background-position: 230px 20px;}
     /*.thumbnails-list{max-width: 280px; }*/
     #home-container .heading-title h1{font-size: 3.25em; }
+    .thumbnails-list{max-height: 280px;}
 }
 
 @media (max-width: 27.5em) {

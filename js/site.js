@@ -12,9 +12,15 @@ $(document).ready(function () {
 
     var screenWidth = $(window).width();
 
+    if (screenWidth <= '1024') {
+        menu.addClass('menu-small');
+    }
+
+
+    // logo animation
     $(".overlay").mouseenter(function(){
         clearTimeout($(this).data('timeoutId'));
-        backgroundColorChange('.overlay');
+        //backgroundColorChange('.overlay');
     }).mouseleave(function(){
         var someElement = $(this),
             timeoutId = setTimeout(function(){
@@ -24,6 +30,7 @@ $(document).ready(function () {
         someElement.data('timeoutId', timeoutId);
     });
 
+    // menu animation
     menuIcon.on('click', function () {
 
         if(menu.hasClass('open')) {
@@ -36,14 +43,13 @@ $(document).ready(function () {
             logo.hide();
             menu.addClass('open');
             menu.show();
-            menuIcon.attr('src', 'images/menu-on.png').fadeOut(500, function(){
-                console.log('1');
+            menuIcon.attr('src', 'images/menu-on.png').delay(350).fadeOut(500, function(){
                 menuIcon.css('background', '#292929').attr('src', 'images/menu-close.png').fadeIn(200, function(){
-                    console.log('2');
+                    //textColorChange('.menu-link');
+                    //backgroundColorChange('.menu-icon');
                 });
             });
-            textColorChange('.menu-link');
-            //backgroundColorChange('.menu-icon');
+
         }
     });
 
@@ -53,13 +59,12 @@ $(document).ready(function () {
             logo.hide();
             menu.addClass('open');
             menu.show();
-            menuIcon.attr('src', 'images/menu-on.png').fadeOut(800, function(){
-                console.log('1');
+            menuIcon.attr('src', 'images/menu-on.png').delay(350).fadeOut(800, function(){
                 menuIcon.css('background', '#292929').attr('src', 'images/menu-close.png');
                 menuIcon.show();
             });
-            textColorChange('.menu-link');
-            backgroundColorChange('.menu-icon');
+            //textColorChange('.menu-link');
+            //backgroundColorChange('.menu-icon');
         }
         else{
             logo.show();
@@ -69,24 +74,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.menu-close').on('click', function() {
-        menu.slideToggle();
-       menuIcon.attr('src', 'images/menu.png');
-       logo.show();
-
-    });
-
-    $('.menu-close').on('tap', function() {
-        menu.slideToggle();
-        menuIcon.attr('src', 'images/menu.png');
-    });
-
-
-    if (screenWidth <= '1024') {
-        menu.addClass('menu-small');
-    }
-
-
+    // portfolio animation
     $('.project-thumb-container').hover(
 
         function () {
@@ -99,6 +87,7 @@ $(document).ready(function () {
 
             var colors = 'rgba('+color[0] + ',' + color[1] + ',' + color[2] +')';
 
+            var timing = 350;
             $("<div id='"+color[0]+"-"+color[1]+"-"+color[2]+"'/>").css({
                 position: "absolute",
                 width: "100%",
@@ -109,13 +98,13 @@ $(document).ready(function () {
                 backgroundColor: 'transparent',
                 opacity:0,
                 cursor: 'pointer'
-            }).appendTo($(this).css("position", "relative")).animate({opacity:.6, backgroundColor: colors}, 800);
+            }).appendTo($(this).css("position", "relative")).animate({opacity:.6, backgroundColor: colors}, timing);
 
             // complement
             var thisrgb = [color[0], color[1], color[2]];
             var complement = contrastingColor(thisrgb);
             var text = $(this).find('p');
-            text.animate({'color': '#'+complement}, 600);
+            text.animate({'color': '#'+complement}, timing);
 
             return;
         },
@@ -130,53 +119,47 @@ $(document).ready(function () {
             var image = $(this).find('img');
 
             var id = '#'+color[0]+'-'+color[1]+'-'+color[2];
-            $(id).animate({opacity: 0,}, 800, function() {
+            var timing = 350;
+            $(id).animate({opacity: 0,}, timing, function() {
                 $(id).remove();
             })
 
             // complement
-            var thisrgb = [color[0], color[1], color[2]];
-            var complement = contrastingColor(thisrgb);
             var text = $(this).find('p');
 
             if(text.hasClass('white')) {
-                text.animate({'color': 'white'}, 600);
+                text.animate({'color': 'white'}, timing);
             }
             else {
-                text.animate({'color': '#999999'}, 600);
+                text.animate({'color': '#999999'}, timing);
             }
             return;
         }
     );
 
-    $('.project-thumb-container').on('tap',
-        function () {
-            var image = $(this).find('img');
-            image.addClass('blur');
-            return;
-        }
-    );
-
+    // window resize actions
     $(window).resize(function () {
         if ($(document).width() >= '1024') {
             logo.show();
-            menuIcon.hide();
+            menuIcon.attr('src', 'images/menu.png').hide();
             menu.show().removeClass('menu-small', 0).removeClass('open', 0);
             $('.menu-link').css('color', 'rgb(41,41,41)');
             headerScrollControl();
         }
         else {
-            menu.addClass('menu-small', 0);
             menuIcon.show();
+            menu.addClass('menu-small', 0);
         }
-    });
 
+        $('#menu.menu-small.open ul li').css('height', '20%');
+    });
 
     headerScrollControl();
 
 });
 
 // animation functions
+
 function backgroundColorChange(element){
     var colors = ['#7EC300', '#CC0066', '#FF6600', '#FF9900'];
     $.each(colors, function(val){

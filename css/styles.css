@@ -60,7 +60,7 @@ p{margin: 2.5em 0; line-height: 1.6em;}
 /* -----------[ PAGE STRUCTURE ]----------- */
 body{font: 100% 'GothamBook', Helvetica, Arial, Verdana, sans-serif; color: #292929; background-color: #ffffff; -webkit-text-size-adjust:100%; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased;  }
 .wrapper { margin: 0 auto; max-width: 75em; position: relative; }
-.heading-title.wrapper{max-width: 1160px; width: 95%; margin: 0 auto;}
+.inner-wrapper{margin: 0 auto; width: 95%; max-width: 1160px; }
 
 /* -----------[ HEADER ]----------- */
 
@@ -108,17 +108,8 @@ header .wrapper {width: 280px;}
 .menu .menu-link:before { background-color: #FFF; content : ""; height : 1px; position : absolute; bottom : 0; left: 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform: scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; }
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
 
-@media (min-width: 30em) {
-    header .wrapper {width: 405px; margin: 0 auto;}
-}
-
-/*@media (min-width: 48em) {*/
-    /*header .wrapper {width: 95%;}*/
-/*}*/
-
 
 @media (min-width: 64em){
-    header .wrapper {width: 90%; margin: 0 auto; max-width: 1200px;}
     .header-small {padding: .5em 0;}
     .header-tall {padding: 3.5em 0 0 0;}
     .logo { width: 142px;}
@@ -156,10 +147,12 @@ header .wrapper {width: 280px;}
 .image-detail-panel .detail-content .description{font-size: 1.125em; margin: 40px 0;}
 #home-container hr{margin-bottom: 60px;}
 .thumbnails-list-container h4{text-align: center; font-family: 'GothamBold'; font-size: 1.25em;}
-.thumbnails-list{max-width: 1460px; margin: 0 auto; width: 90%; padding: 0 5%;}
-.thumbnails-list .thumbnail-container{float: left; cursor: pointer; width: 25%;}
-.thumbnails-list .thumbnail-container.bottom{margin-top: 30px;}
+.thumbnails-list{max-width: 1460px; margin: 0 auto; width: 90%; padding: 0 5%; height: 27%; max-height: 385px; overflow: hidden;}
+.thumbnails-list .thumbnail-container{float: left; cursor: pointer; width: 25%; opacity: 0; display: block; transition: all 1s ease 0s; margin-top: 70px; }
+.thumbnails-list .thumbnail-container.animate{ animation: 0.65s ease 0s normal forwards 1 running moveUp; opacity: 1; margin-top: 0; }
+.thumbnails-list .thumbnail-container.animate.bottom{margin-top: 20px;}
 .thumbnails-list-heading{width: 63%;}
+
 
 /* -----------[ PROJECT/CASE STUDY PAGE ]----------- */
 .project-title h1{font-family: 'Utopia'; font-size: 83px; text-align: center;}
@@ -275,13 +268,13 @@ header .wrapper {width: 280px;}
 @media (max-width: 62.5em) {
     .image-detail-panel{width: auto;}
     .image-detail-panel, .image-detail-panel.right, .image-detail-panel.left{left: 0; right: 0; bottom: 0; position: relative; margin: 0 auto;}
-    .image-detail-panel .detail-content{margin: 50px auto; width: 405px;}
+    .image-detail-panel .detail-content{margin: 50px auto; /*width: 405px;*/}
     .thumbnails-list-container h4{margin-bottom: 20px;}
     .thumbnails-list-container hr{display: none;}
-    .thumbnails-list{max-width: 405px; padding: 0;}
+    .thumbnails-list{/*max-width: 405px;*/ padding: 0;}
     .thumbnails-list .thumbnail-container{width: 50%;}
-    .thumbnails-list .thumbnail-container.bottom{margin-top: 0;}
-    #home-container .heading-title h1{width: 90%; max-width: 490px; margin-left: auto; margin-right: auto;}
+    .thumbnails-list .thumbnail-container.animate.bottom{margin-top: 0;}
+    .inner-wrapper-mobile{margin-left: auto; margin-right: auto; width: 405px; }
 }
 
 @media (max-width: 61.0625em) {
@@ -290,6 +283,7 @@ header .wrapper {width: 280px;}
 }
 
 @media (/*max-width: 65em*/ max-width: 48em) {
+    .inner-wrapper{margin-left: auto; margin-right: auto; width: 405px; }
     .project-image-collage{/*max-width: 630px; max-height: 1260px; overflow: hidden;*/ max-width: 680px;}
     .project-image-collage .left-column, .project-image-collage .right-column {float: none;}
     .project-image-collage .right-column {width: 100%;}
@@ -386,11 +380,12 @@ header .wrapper {width: 280px;}
 }
 
 @media (max-width: 30em) {
-    .image-detail-panel .detail-content{width: 280px;}
+    .inner-wrapper{width: 280px; }
+    /*.image-detail-panel .detail-content{width: 280px;}*/
     .image-detail-panel .detail-content h3{font-size: 2.625em;}
     #home-container .button{width: 230px; background-position: 230px 20px;}
-    .thumbnails-list{max-width: 280px; }
-    #home-container .heading-title h1{font-size: 3.25em; max-width: 250px; }
+    /*.thumbnails-list{max-width: 280px; }*/
+    /*#home-container .heading-title h1{font-size: 3.25em; max-width: 250px; }*/
 }
 
 @media (max-width: 27.5em) {

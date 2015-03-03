@@ -90,8 +90,8 @@ header .wrapper {width: 280px;}
 .menu-icon {float: right; height: 40px; margin-bottom: 11px; cursor:pointer;}
 
 #menu {background: #292929; clear: both; display: none; float: left; font-family: GothamLight; font-size: 2em; width: 50%;}
-#menu.menu-small, #menu.menu-small.closed { position:fixed; top:0; left:0; opacity: 0; visibility: hidden; height: 100%; width: 100%; transition: opacity 0.5s, visibility 0s 0.5s;  }
-#menu.menu-small.open { opacity: 1; visibility: visible; background-color: white; transition: opacity 0.5s; margin-top: 50px;}
+#menu.menu-small, #menu.menu-small.closed { position:fixed; top:0; left:0; opacity: 0; visibility: hidden; height: 100%; width: 100%;  }
+#menu.menu-small.open { opacity: 1; visibility: visible; background-color: white; margin-top: 50px;}
 
 
 #menu.menu-small.open ul {clear: both; height: 100%;}
@@ -102,13 +102,16 @@ header .wrapper {width: 280px;}
 .menu .menu-link:before { background-color: #FFF; content : ""; height : 1px; position : absolute; bottom : 0; left: 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform: scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; }
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
 
+@media (min-width: 48em) {
+}
 
 @media (min-width: 64em){
     .header-small {padding: .5em 0;}
     .header-tall {padding: 3.5em 0 0 0;}
     .logo { width: 142px;}
-    #menu {background: white; clear: none; display: inline; font-family: Gotham-Bold; font-size: 1em; float: right; width: auto;}
     .menu-close, .menu-icon {display: none;}
+
+    #menu {background: white; clear: none; display: inline; font-family: Gotham-Bold; font-size: 1em; float: right; width: auto;}
     #menu #menu-content {width: 100%; margin: 0 auto;}
     #menu .menu-link:before { background-color: #000; content : ""; height : 1px; position : absolute; bottom : 0; left : 0; width : 100%; opacity : 0; -webkit-transform: scaleX(.5); transform : scaleX(.5); -webkit-transition: ease-in-out .3s; transition : ease-in-out .3s; }
     #menu .menu-link:hover:before { opacity : 1.0; -webkit-transform: scaleX(1.5); transform : scaleX(1.5); }

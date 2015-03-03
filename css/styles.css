@@ -64,14 +64,7 @@ body{font: 100% 'GothamBook', Helvetica, Arial, Verdana, sans-serif; color: #292
 
 /* -----------[ HEADER ]----------- */
 
-header {
-    width:100%;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index: 20000;
-}
-
+header { width:100%; position:fixed; top:0; left:0; z-index: 20000; }
 header .wrapper {width: 280px;}
 
 .header-small {height: 40px; background-color: white; padding: .5em 0; transition: 1s ;}
@@ -80,24 +73,12 @@ header .wrapper {width: 280px;}
 .logo {float: left; margin: 0; padding: 0; width: 50%; height: 25px;}
 .logo img {margin-top: 9px; background-color: black; height: 25px; width:99px;}
 
-.menu-close {float: right; height: 40px; margin-right: .8em; margin-top: .1em;}
-.menu-icon {float: right; height: 40px; margin-bottom: 11px;}
+.menu-close {float: right; height: 40px; margin-right: .8em; margin-top: .1em;  cursor:pointer;}
+.menu-icon {float: right; height: 40px; margin-bottom: 11px; cursor:pointer;}
 
 #menu {background: #292929; clear: both; display: none; float: left; font-family: GothamLight; font-size: 2em; width: 50%;}
-#menu.menu-small, #menu.menu-small.closed { position:fixed;
-    top:0;
-    left:0;
-    opacity: 0;
-    visibility: hidden;
-    height: 100%;
-    width: 100%;
-    transition: opacity 0.5s, visibility 0s 0.5s;
-}
-#menu.menu-small.open {
-    opacity: 1;
-    visibility: visible;
-    background-color: white;
-    transition: opacity 0.5s;
+#menu.menu-small, #menu.menu-small.closed { position:fixed; top:0; left:0; opacity: 0; visibility: hidden; height: 100%; width: 100%; transition: opacity 0.5s, visibility 0s 0.5s;  }
+#menu.menu-small.open { opacity: 1; visibility: visible; background-color: white; transition: opacity 0.5s;}
 }
 
 #menu.menu-small.open ul {margin-top: 55px; clear: both; height: 100%;}
@@ -438,24 +419,21 @@ header .wrapper {width: 280px;}
     .project-thumb-container .project-info h3{font-size: 0.95em;}
 }
 
-
-@media (max-width: 31.25em) {
-    .project-thumb-container{width: 100%;}
-    .project-thumb-container .project-info{top: 38%; }
-    .project-thumb-container .project-info p{font-size: 1em; margin: .6em 0; }
-    .project-thumb-container .project-info h3{font-size: 0.95em;}
-}
-
 /* -----------[ FOOTER ]----------- */
 
 .footer {background-image:url(../images/porfolio/ClientJ/gallery-image.jpg); background-attachment: scroll; background-size:cover; font-size: .9em;}
-.footer .always-visible { color: white; height: 35px; padding: 25px 50px; text-align: center;}
+.footer .always-visible { color: white; height: 35px; text-align: center; max-width:1160px; margin: 0 auto; padding-top: 15px;}
 .footer .always-visible .copyright {float: left; width: 20%;}
 .footer .always-visible .information {float: left; width: 60%;}
 .footer .always-visible .social {float: left; width: 20%;}
 .footer .hidden-footer { display: none; }
 
 @media (max-width: 48em) {
+    .footer .always-visible {width: 405px; height: 105px;}
 .footer .always-visible .copyright {width: 100%;}
 .footer .always-visible .information {width: 100%;}
 .footer .always-visible .social {width: 100%;}}
+
+@media (max-width: 30em) {
+    .footer .always-visible {width: 280px; height: 120px; line-height: 1.4em;}
+}

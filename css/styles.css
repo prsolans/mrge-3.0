@@ -386,7 +386,7 @@ header .wrapper {width: 280px;}
 /* -----------[ PORTFOLIO GALLERY ]----------- */
 
 .project-thumb-container{ width: 33.33%; height: auto; float: left; position: relative;}
-.project-thumb-container a{height: 100%; left: 0; position: absolute; top: 0; width: 100%;}
+.project-thumb-container a{height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 100;}
 .project-thumb-container img { width: 100%; height: auto; display: block;}
 
 

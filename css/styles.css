@@ -102,12 +102,10 @@ header .wrapper {width: 280px;}
 .menu .menu-link:before { background-color: #FFF; content : ""; height : 1px; position : absolute; bottom : 0; left: 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform: scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; }
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }
 
-@media (min-width: 48em) {
-}
 
 @media (min-width: 64em){
     .header-small {padding: .5em 0;}
-    .header-tall {padding: 3.5em 0 0 0;}
+    .header-tall {padding: 3.5em 0;}
     .logo { height: 35px;}
     .menu-close, .menu-icon {display: none;}
 
@@ -311,6 +309,10 @@ header .wrapper {width: 280px;}
     .project-image-collage.rectangle-long-right .left-column{width: 100%;}
     .project-image-collage.rectangle-long-right .right-column{width: 100%;}
     .thumbnails-list{max-height: 405px;}
+}
+
+@media (max-width:48em) AND (orientation:portrait){
+    .inner-wrapper{width: 90%;}
 }
 
 @media (max-width: 46.1875em) {

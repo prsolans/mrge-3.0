@@ -131,7 +131,7 @@ header .wrapper {width: 280px;}
 .work-content p:last-child{margin-bottom: 0;}
 
 /* -----------[ HOME PAGE ]----------- */
-#home-container{margin-top: 14em;}
+#home-container{margin-top: 14em; tranistion: all 1s;}
 #home-container .work-content{margin-bottom: 200px;}
 #home-container .heading-title h1{font-family: 'Utopia'; font-size: 6.5em; line-height: .85em; margin-bottom: 70px; width: 80%; max-width: 800px; }
 #home-container .hero-img{position: relative;}
@@ -281,7 +281,8 @@ header .wrapper {width: 280px;}
 
 @media (/*max-width: 65em*/ max-width: 48em) {
     .inner-wrapper{margin-left: auto; margin-right: auto; width: 405px; }
-    #home-container .heading-title h1{width: 100%; overflow: hidden;}
+    #home-container {margin-top:10em; transition: all 1s;}
+    #home-container .heading-title h1{width: 100%; overflow: hidden; }
     .project-image-collage{/*max-width: 630px; max-height: 1260px; overflow: hidden;*/ max-width: 680px;}
     .project-image-collage .left-column, .project-image-collage .right-column {float: none;}
     .project-image-collage .right-column {width: 100%;}
@@ -356,6 +357,8 @@ header .wrapper {width: 280px;}
 }
 
 @media (max-width: 30em) {
+    #home-container {margin-top:8em; transition: all 1s;}
+
     .inner-wrapper, .inner-wrapper-mobile{width: 280px; }
     /*.image-detail-panel .detail-content{width: 280px;}*/
     .image-detail-panel .detail-content h3{font-size: 2.625em;}

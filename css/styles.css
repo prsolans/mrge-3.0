@@ -150,6 +150,13 @@ header .wrapper {width: 280px;}
 /* -----------[ AGENCY ]----------- */
 #agency-container  {margin-bottom: 200px;}
 #agency-container .heading-title h1{margin-bottom: 30px;}
+.arrow-button {background-color: white; border:2px solid black; background-image:url(../images/icon/ico-arrow.png); background-size:60%; background-position: center center; background-repeat: no-repeat; border-radius:50%;
+    -webkit-box-shadow :  5px 5px 0 black;
+    -moz-box-shadow    :  5px 5px 0 black;
+    box-shadow         :  5px 5px 0 black; margin-top: 3em;
+    width: 75px; height: 75px; display: block; cursor: pointer; }
+.arrow-button:hover {background-color: black; background-image:url(../images/icon/ico-arrow-hover.png); background-position: center center; transition: background-color 0.2s ease 0s; cursor: pointer; }
+
 .opening-content div{width: 48%; font-size: 1.125em; line-height: 1.5em;}
 .leadership-list{margin: 0 auto; /*margin-bottom: -99999px; padding-bottom: 99999px;*/ }
 .leadership-list .thumbnail-container{float: left; width: 20%; display: block; }
@@ -159,6 +166,7 @@ header .wrapper {width: 280px;}
 .leadership-list .thumbnail-container .leader-info{width: 72%; padding:0 10% 0 5%; position: absolute; top: 0; left: 0;}
 .leadership-list .thumbnail-container .leader-info h4{font-size: 1.25em; font-family: 'GothamBold'; text-transform: uppercase; margin: 40px 0 5px 0;}
 .leadership-list .thumbnail-container .leader-info .title{color: #666666; margin-bottom: 35px;}
+
 
 /* -----------[ PROJECT/CASE STUDY PAGE ]----------- */
 .project-title h1{font-family: 'Utopia'; font-size: 83px; text-align: center;}
@@ -446,7 +454,7 @@ header .wrapper {width: 280px;}
 .footer .always-visible .social img {height: 20px; width: 20px; padding: 0% 3%; float: left; clear: none;}
 
 .footer .hidden-footer { display: none; }
-.footer .small-image {display: none;}
+.footer .small-image, .footer .small-footer-headline {display: none;}
 
 @media (max-width: 48em) {
     /*.footer .always-visible {width: 405px; height: 105px;}*/
@@ -456,7 +464,8 @@ header .wrapper {width: 280px;}
 
     .footer {background: white; }
     .footer .always-visible {width: 405px; height: auto; line-height: 1.4em;color: #292929; text-align: left;}
-    .footer .always-visible .information .address, .footer .always-visible .information .contact, .footer .always-visible .information .telephone {clear: both; text-align: left;}
+    .footer .always-visible .information {width: 100%;}
+    .footer .always-visible .information .address, .footer .always-visible .information .contact, .footer .always-visible .information .telephone {clear: both; text-align: left; font-size: 1.125em;}
     .footer .always-visible .copyright {display: none;}
     .footer .always-visible .information a {color: black; font-weight: bold; text-decoration: none; float: left;}
     .footer .always-visible .social {clear: left; width: 32%; margin: 30px 0;}
@@ -465,6 +474,7 @@ header .wrapper {width: 280px;}
     .footer .always-visible .social.outside-right {border-top: 1px solid black; border-bottom: 1px solid black; border-right: 1px solid black;}
     .footer .always-visible .social.inside {border: 1px solid black;}
     .footer .small-image {display: block; background-image:url(../images/assets/footer-with.jpg); background-size: cover; height: 135px; clear: both}
+    .footer .small-footer-headline {font-family: 'Utopia'; font-size: 2.625em; line-height: .9em; display: block; margin-bottom: 1em;}
 }
 @media (max-width: 30em) {
     .footer .always-visible {width: 280px; height: auto;}

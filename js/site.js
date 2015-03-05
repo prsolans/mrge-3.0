@@ -6,6 +6,7 @@
 
 $(document).ready(function () {
 
+
     function onWindowResize() {
         $('.colored-box-image').each(function () {
             $(this).prev().height($(this).height());
@@ -308,4 +309,10 @@ function carouselInit(data) {
 
 function carouselAnim(data) {
     $('#carousel-status').html(data['curLayerIndex'] + '<span class="slash">/</span>' + data['layersNum'])
+}
+
+//
+
+function scrollTo(element){
+    $(window).scrollTop(element);
 }

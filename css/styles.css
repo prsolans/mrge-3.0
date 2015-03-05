@@ -458,19 +458,24 @@ to { background-position: center center;}
 /* -----------[ FOOTER ]----------- */
 
 .footer {background-image:url(../images/assets/footer-with.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center; font-size: .9em;}
+.footer .always-visible .information .address, .footer .always-visible .information .contact, .footer .always-visible .information .telephone {clear: none; font-size: 1em; float: left; text-align: center;}
+
 .footer .always-visible { color: white; height: 687px; max-width:1160px; margin: 0 auto; padding-top: 15px;}
 .footer .always-visible .copyright {float: left; width: 20%; display: block;}
 .footer .always-visible .information {float: left; width: 60%;text-align: center; }
+.footer .always-visible .information a {color: white; font-weight: normal; text-decoration: none; float: left;}
 .footer .always-visible .information .address {clear: none; float: left;}
-
-.footer .always-visible .information .green{color: #33cc00; }
-.footer .always-visible .social {float: right; margin-top: -3px;}
+.footer .always-visible .information .green{color: #33cc00; float: left; padding:0 .4em;}
+.footer .always-visible .social {float: right; margin-top: -3px; padding: 0 .2em;}
 .footer .always-visible .social img {height: 20px; width: 20px; padding: 0% 3%; float: left; clear: none;}
 
 .footer .hidden-footer { display: none; }
-.footer .small-image, .footer .small-footer-headline {display: none;}
+.footer .small-image, .footer .small-footer-headline, .footer .small-footer-copyright {display: none;}
+.footer .always-visible .information .address .line-2 { display: inline;}
+/*.footer .always-visible .information .address .line-2:before { content: '';}*/
 
-@media (max-width: 48em) {
+
+@media (max-width: 64em) {
     /*.footer .always-visible {width: 405px; height: 105px;}*/
     /*.footer .always-visible .copyright {width: 100%;}*/
     /*.footer .always-visible .information {width: 100%;}*/
@@ -479,19 +484,26 @@ to { background-position: center center;}
     .footer {background: white; }
     .footer .always-visible {width: 405px; height: auto; line-height: 1.4em;color: #292929; text-align: left;}
     .footer .always-visible .information {width: 100%;}
-    .footer .always-visible .information .address, .footer .always-visible .information .contact, .footer .always-visible .information .telephone {clear: both; text-align: left; font-size: 1.125em;}
+    .footer .always-visible .information .address, .footer .always-visible .information .contact, .footer .always-visible .information .telephone {clear: both; text-align: left; font-size: 1.125em; margin-bottom: 1em;}
+    .footer .always-visible .information .address .line-2 { padding-left: 23px; clear:both; display:block;}
+    /*.footer .always-visible .information .address .line-2:before { content: '\A';}*/
     .footer .always-visible .copyright {display: none;}
     .footer .always-visible .information a {color: black; font-weight: bold; text-decoration: none; float: left;}
-    .footer .always-visible .social {clear: left; width: 32%; margin: 30px 0;}
-    .footer .always-visible .social img {height: 45px; width: 45px; padding: 0% 3%; -webkit-filter: saturate(0%) brightness(70%) contrast(1000%); float: left; clear: none;}
+    .footer .always-visible .social {float: left; margin: 30px 0 60px 0;}
+    .footer .always-visible .social img {height: 45px; width: 45px; padding: 15px 20px; -webkit-filter: saturate(0%) brightness(70%) contrast(1000%); float: left; clear: none;}
     .footer .always-visible .social.outside-left {border-top: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black;}
     .footer .always-visible .social.outside-right {border-top: 1px solid black; border-bottom: 1px solid black; border-right: 1px solid black;}
     .footer .always-visible .social.inside {border: 1px solid black;}
     .footer .small-image {display: block; background-image:url(../images/assets/footer-with.jpg); background-size: cover; height: 135px; clear: both}
     .footer .small-footer-headline {font-family: 'Utopia'; font-size: 2.625em; line-height: .9em; display: block; margin-bottom: 1em;}
+    .footer .small-footer-copyright {display:block; clear: both;}
+
 }
+
 @media (max-width: 30em) {
+
     .footer .always-visible {width: 280px; height: auto;}
+
 }
 /*.footer {background-image:url(../images/assets/orange-wave.png), url(../images/assets/red-wave.png), url(../images/assets/footer.jpg); background-repeat: no-repeat, no-repeat, no-repeat; background-position: -30px 420px, 0px 430px, 0 0; background-size: 100%, 100%, cover; font-size: .9em;}*/
 

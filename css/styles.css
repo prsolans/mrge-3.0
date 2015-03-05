@@ -64,8 +64,10 @@ input::-moz-focus-inner /*Remove button padding in FF*/
 
 p{margin: 2.5em 0; line-height: 1.6em;}
 
-.button{border: 2px solid black; padding: 20px 15px 20px 25px; width: 285px; background: url("../images/ico-plus.png") no-repeat scroll 280px 20px rgba(0, 0, 0, 0); box-shadow: 5px 5px 0 black; display: block; cursor: pointer; transition: all 0.2s ease 0s; position: relative; font-family: 'GothamBold';}
-.button:hover{color: #fff;  }
+.button{border: 2px solid black; padding: 20px 15px 20px 25px; width: 285px; background: none no-repeat scroll 280px 20px rgba(0, 0, 0, 0); box-shadow: 5px 5px 0 black; display: block; cursor: pointer; transition: all 0.2s ease 0s; position: relative; font-family: 'GothamBold'; color: #000; text-decoration: none;}
+.button::before { width: 330px; height: 70px; background: url("../images/ico-plus.png") no-repeat scroll 280px 20px transparent; content: ""; position: absolute; top: 0px; left: 0px; }
+.button:hover{color: #fff; background: none no-repeat scroll 280px 20px rgba(0, 0, 0, 0); }
+.button:hover::before { background: url("../images/ico-plus-inverted.png") no-repeat scroll 280px 20px transparent; content: ""; position: absolute; top: 0px; left: 0px; z-index: 100; }
 .button p{margin: 0; position: relative;}
 .btn-hover{bottom: 0; height: 0; left: 0; position: absolute; width: 100%; background: #000; transition: all 0.2s ease 0s; color: #fff; }
 .button:hover .btn-hover{height: 100%; }
@@ -98,6 +100,7 @@ header .wrapper {width: 280px;}
 
 #menu #menu-content {width: 280px; margin: 0 auto; height: 90%;}
 #menu .menu-link {color: #292929; padding-bottom: 11px;position: relative;text-decoration: none; }
+#menu .menu-link-active { text-transform: uppercase; }
 #menu li {font-family: GothamLight; height: 20%; line-height: 2.5em; text-align: center; width: 100%; }
 .menu .menu-link:before { background-color: #FFF; content : ""; height : 1px; position : absolute; bottom : 0; left: 0; width : 100%; visibility : hidden; -webkit-transform : scaleX(0); transform: scaleX(0); -webkit-transition : all 0.3s ease-in-out 0s; transition : all 0.3s ease-in-out 0s; }
 .menu .menu-link:hover:before { visibility: visible; -webkit-transform : scaleX(1); transform: scaleX(1); }

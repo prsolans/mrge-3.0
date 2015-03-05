@@ -412,13 +412,16 @@ header .wrapper {width: 280px;}
 
 /* -----------[ FOOTER ]----------- */
 
-.footer {background-image:url(../images/porfolio/ClientJ/gallery-image.jpg); background-attachment: scroll; background-size:cover; font-size: .9em;}
-.footer .always-visible { color: white; height: 35px; text-align: center; max-width:1160px; margin: 0 auto; padding-top: 15px;}
+.footer {background-image:url(../images/assets/orange-wave.png), url(../images/assets/red-wave.png), url(../images/assets/footer.jpg); background-repeat: no-repeat, no-repeat, no-repeat; background-position: -30px 420px, 0px 430px, 0 0; background-size: 100%, 100%, cover; font-size: .9em;}
+.footer .orange-wave {background-image: background-size: cover;}
+.footer .always-visible { color: white; height: 687px; max-width:1160px; margin: 0 auto; padding-top: 15px;}
 .footer .always-visible .copyright {float: left; width: 20%;}
-.footer .always-visible .information {float: left; width: 60%;}
+.footer .always-visible .information {float: left; width: 60%;text-align: center; }
+.footer .always-visible .information .green{color: #33cc00; }
 .footer .always-visible .social {float: left; width: 20%;}
 .footer .hidden-footer { display: none; }
-
+.footer .social img {float: right; height: 20px; width: 20px; padding: 0% 3%;}
+.footer .social {margin-top: -3px;}
 @media (max-width: 48em) {
     .footer .always-visible {width: 405px; height: 105px;}
 .footer .always-visible .copyright {width: 100%;}
@@ -428,3 +431,13 @@ header .wrapper {width: 280px;}
 @media (max-width: 30em) {
     .footer .always-visible {width: 280px; height: 120px; line-height: 1.4em;}
 }
+@-webkit-keyframes animatedWaves {
+    from { background-position: -30px 550px, 0px 550px, 0 0; opacity: 0, 0, 1; }
+    to { background-position: -30px 420px, 0px 430px, 0 0; opacity: .4, .4, 1;}
+}
+@keyframes animatedWaves {
+    from { background-position: -30px 750px, 0px 650px, 0 0; }
+    to { background-position: -30px 620px, 0px 630px, 0 0; }
+}
+
+.footer { -webkit-animation: animatedWaves 2s linear; animation: animatedWaves 2s linear; opacity: .4 2s; }

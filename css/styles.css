@@ -157,6 +157,17 @@ header .wrapper {width: 280px;}
     width: 75px; height: 75px; display: block; cursor: pointer; }
 .arrow-button:hover {background-color: black; background-image:url(../images/icon/ico-arrow-hover.png); background-position: center center; transition: background-color 0.2s ease 0s; cursor: pointer; }
 
+@-webkit-keyframes animatedArrow {
+from { background-position: bottom center; }
+to { background-position: center center;}
+}
+@keyframes animatedArrow {
+    from { background-position: bottom center; }
+    to { background-position: center center;}
+}
+
+.arrow-button:hover { -webkit-animation: animatedArrow 0.2s linear; animation: animatedArrow 0.2s linear; }
+
 .opening-content div{width: 48%; font-size: 1.125em; line-height: 1.5em;}
 .leadership-list{margin: 0 auto; /*margin-bottom: -99999px; padding-bottom: 99999px;*/ }
 .leadership-list .thumbnail-container{float: left; width: 20%; display: block; }

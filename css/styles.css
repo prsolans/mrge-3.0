@@ -89,7 +89,7 @@ header .wrapper {width: 280px;}
 .menu-close {float: right; height: 40px; margin-right: .8em; margin-top: .1em;  cursor:pointer;}
 .menu-icon {float: right; height: 40px; margin-bottom: 11px; cursor:pointer;}
 
-#menu {background: #292929; clear: both; display: none; float: left; font-family: GothamLight; font-size: 2em; width: 50%;}
+#menu {clear: both; opacity: 0; float: left; font-family: GothamLight; font-size: 2em; width: 50%; }
 #menu.menu-small, #menu.menu-small.closed { position:fixed; top:0; left:0; opacity: 0; visibility: hidden; height: 100%; width: 100%;  }
 #menu.menu-small.open { opacity: 1; visibility: visible; background-color: white; margin-top: 50px;}
 

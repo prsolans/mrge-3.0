@@ -6,6 +6,7 @@
 
 $(document).ready(function () {
 
+
     function onWindowResize() {
         $('.colored-box-image').each(function () {
             $(this).prev().height($(this).height());
@@ -78,8 +79,6 @@ $(document).ready(function () {
         }
         else {
             logo.hide().animate({opacity: 0}, 0, function(){});
-            menuIcon.attr('src', 'images/menu-on.png');//.delay(350).css('background-color', '#292929').attr('src', 'images/menu-close.png');
-
             menu.addClass('open');
             menu.animate({opacity: 1}, 0, function(){
                 menuLink.animate({opacity: 1}, 350)
@@ -90,23 +89,22 @@ $(document).ready(function () {
 
     menuIcon.on('tap', function () {
         if (menu.hasClass('open')) {
-            logo.show();
-            menu.removeClass('open');
-            menu.hide();
             menuIcon.attr('src', 'images/menu.png');
-        }
-        else {
-            logo.hide();
-            menu.addClass('open');
-            menu.show();
-            menuIcon.attr('src', 'images/menu-on.png').delay(350).fadeOut(50, function () {
-                menuIcon.css('background', '#292929').attr('src', 'images/menu-close.png').fadeIn(200, function () {
-                    animateImageBackground(this);
-                });
-                //animateTextColor('.menu-link');
+            menuLink.animate({opacity: 0}, 350, function(){
+                menu.removeClass('open');
+                logo.show().animate({opacity:1}, 200, function(){});
+                menuIcon.attr('src', 'images/menu.png');
+
             });
 
-
+        }
+        else {
+            logo.hide().animate({opacity: 0}, 0, function(){});
+            menu.addClass('open');
+            menu.animate({opacity: 1}, 0, function(){
+                menuLink.animate({opacity: 1}, 350)
+                menuIcon.css('background-color', '#292929').attr('src', 'images/menu-close.png');//.delay(350).css('background-color', '#292929').attr('src', 'images/menu-close.png');
+            });
         }
     });
 
@@ -311,4 +309,10 @@ function carouselInit(data) {
 
 function carouselAnim(data) {
     $('#carousel-status').html(data['curLayerIndex'] + '<span class="slash">/</span>' + data['layersNum'])
+}
+
+//
+
+function scrollTo(element){
+    $(window).scrollTop(element);
 }

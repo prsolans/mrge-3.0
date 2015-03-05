@@ -108,7 +108,7 @@ header .wrapper {width: 280px;}
 
 @media (min-width: 64em){
     .header-small {padding: .5em 0;}
-    .header-tall {padding: 3.5em 0;}
+    .header-tall {padding: 3.5em 0 2em 0;}
     .logo { height: 35px; opacity: 1.0 !important;}
     .menu-close, .menu-icon {display: none;}
 
@@ -153,6 +153,13 @@ header .wrapper {width: 280px;}
 /* -----------[ AGENCY ]----------- */
 #agency-container  {margin-bottom: 200px;}
 #agency-container .heading-title h1{margin-bottom: 30px;}
+.arrow-button {background-color: white; border:2px solid black; background-image:url(../images/icon/ico-arrow.png); background-size:60%; background-position: center center; background-repeat: no-repeat; border-radius:50%;
+    -webkit-box-shadow :  5px 5px 0 black;
+    -moz-box-shadow    :  5px 5px 0 black;
+    box-shadow         :  5px 5px 0 black; margin-top: 3em;
+    width: 75px; height: 75px; display: block; cursor: pointer; }
+.arrow-button:hover {background-color: black; background-image:url(../images/icon/ico-arrow-hover.png); background-position: center center; transition: background-color 0.2s ease 0s; cursor: pointer; }
+
 .opening-content div{width: 48%; font-size: 1.125em; line-height: 1.5em;}
 .leadership-list{margin: 0 auto; /*margin-bottom: -99999px; padding-bottom: 99999px;*/ }
 .leadership-list .thumbnail-container{float: left; width: 20%; display: block; }
@@ -162,6 +169,7 @@ header .wrapper {width: 280px;}
 .leadership-list .thumbnail-container .leader-info{width: 72%; padding:0 10% 0 5%; position: absolute; top: 0; left: 0;}
 .leadership-list .thumbnail-container .leader-info h4{font-size: 1.25em; font-family: 'GothamBold'; text-transform: uppercase; margin: 40px 0 5px 0;}
 .leadership-list .thumbnail-container .leader-info .title{color: #666666; margin-bottom: 35px;}
+
 
 /* -----------[ PROJECT/CASE STUDY PAGE ]----------- */
 .project-title h1{font-family: 'Utopia'; font-size: 83px; text-align: center;}
@@ -438,19 +446,51 @@ header .wrapper {width: 280px;}
 
 /* -----------[ FOOTER ]----------- */
 
-.footer {background-image:url(../images/porfolio/ClientJ/gallery-image.jpg); background-attachment: scroll; background-size:cover; font-size: .9em;}
-.footer .always-visible { color: white; height: 35px; text-align: center; max-width:1160px; margin: 0 auto; padding-top: 15px;}
-.footer .always-visible .copyright {float: left; width: 20%;}
-.footer .always-visible .information {float: left; width: 60%;}
-.footer .always-visible .social {float: left; width: 20%;}
+.footer {background-image:url(../images/assets/footer-with.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center; font-size: .9em;}
+.footer .always-visible { color: white; height: 687px; max-width:1160px; margin: 0 auto; padding-top: 15px;}
+.footer .always-visible .copyright {float: left; width: 20%; display: block;}
+.footer .always-visible .information {float: left; width: 60%;text-align: center; }
+.footer .always-visible .information .address {clear: none; float: left;}
+
+.footer .always-visible .information .green{color: #33cc00; }
+.footer .always-visible .social {float: right; margin-top: -3px;}
+.footer .always-visible .social img {height: 20px; width: 20px; padding: 0% 3%; float: left; clear: none;}
+
 .footer .hidden-footer { display: none; }
+.footer .small-image, .footer .small-footer-headline {display: none;}
 
 @media (max-width: 48em) {
-    .footer .always-visible {width: 405px; height: 105px;}
-.footer .always-visible .copyright {width: 100%;}
-.footer .always-visible .information {width: 100%;}
-.footer .always-visible .social {width: 100%;}}
+    /*.footer .always-visible {width: 405px; height: 105px;}*/
+    /*.footer .always-visible .copyright {width: 100%;}*/
+    /*.footer .always-visible .information {width: 100%;}*/
+    /*.footer .always-visible .social {width: 100%;}}*/
 
-@media (max-width: 30em) {
-    .footer .always-visible {width: 280px; height: 120px; line-height: 1.4em;}
+    .footer {background: white; }
+    .footer .always-visible {width: 405px; height: auto; line-height: 1.4em;color: #292929; text-align: left;}
+    .footer .always-visible .information {width: 100%;}
+    .footer .always-visible .information .address, .footer .always-visible .information .contact, .footer .always-visible .information .telephone {clear: both; text-align: left; font-size: 1.125em;}
+    .footer .always-visible .copyright {display: none;}
+    .footer .always-visible .information a {color: black; font-weight: bold; text-decoration: none; float: left;}
+    .footer .always-visible .social {clear: left; width: 32%; margin: 30px 0;}
+    .footer .always-visible .social img {height: 45px; width: 45px; padding: 0% 3%; -webkit-filter: saturate(0%) brightness(70%) contrast(1000%); float: left; clear: none;}
+    .footer .always-visible .social.outside-left {border-top: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black;}
+    .footer .always-visible .social.outside-right {border-top: 1px solid black; border-bottom: 1px solid black; border-right: 1px solid black;}
+    .footer .always-visible .social.inside {border: 1px solid black;}
+    .footer .small-image {display: block; background-image:url(../images/assets/footer-with.jpg); background-size: cover; height: 135px; clear: both}
+    .footer .small-footer-headline {font-family: 'Utopia'; font-size: 2.625em; line-height: .9em; display: block; margin-bottom: 1em;}
 }
+@media (max-width: 30em) {
+    .footer .always-visible {width: 280px; height: auto;}
+}
+/*.footer {background-image:url(../images/assets/orange-wave.png), url(../images/assets/red-wave.png), url(../images/assets/footer.jpg); background-repeat: no-repeat, no-repeat, no-repeat; background-position: -30px 420px, 0px 430px, 0 0; background-size: 100%, 100%, cover; font-size: .9em;}*/
+
+/*@-webkit-keyframes animatedWaves {*/
+    /*from { background-position: -30px 550px, 0px 550px, 0 0; opacity: 0, 0, 1; }*/
+    /*to { background-position: -30px 420px, 0px 430px, 0 0; opacity: .4, .4, 1;}*/
+/*}*/
+/*@keyframes animatedWaves {*/
+    /*from { background-position: -30px 750px, 0px 650px, 0 0; }*/
+    /*to { background-position: -30px 620px, 0px 630px, 0 0; }*/
+/*}*/
+
+/*.footer { -webkit-animation: animatedWaves 2s linear; animation: animatedWaves 2s linear; opacity: .4 2s; }*/

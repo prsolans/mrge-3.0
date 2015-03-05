@@ -143,10 +143,11 @@ $(document).ready(function () {
             logo.show();
             menuIcon.attr('src', 'images/menu.png').hide();
             menu.show().removeClass('menu-small', 0).removeClass('open', 0);
-            $('.menu-link').css('color', 'rgb(41,41,41)');
+            menuLink.show().css('color', 'rgb(41,41,41)');
             headerScrollControl();
         }
         else {
+            logo.css('opacity', '1.0');
             menuIcon.show();
             menu.addClass('menu-small', 0);
         }

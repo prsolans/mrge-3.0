@@ -6,6 +6,41 @@
 
 $(document).ready(function () {
 
+    function onWindowResize() {
+        $('.colored-box-image').each(function () {
+            $(this).prev().height($(this).height());
+        });
+
+        var windowWidth = window.outerWidth != 0 ? window.outerWidth : $(window).width();
+
+        if (windowWidth > 480) {
+            $('.contact-social-links').each(function () {
+                var width = (($(this).width() - 3) / 4);
+
+                $(this).find('.contact-social-link').width(width);
+                $(this).find('.contact-social-link').css('border-right', '1px solid black');
+                $(this).find('.contact-social-link-last').css('border-right', '0');
+            });
+        } else {
+            $('.contact-social-links').each(function () {
+                var width = (($(this).width() - 1) / 2);
+
+                $(this).find('.contact-social-link').width(width);
+                $(this).find('.contact-social-link').css('border-right', '0');
+                $(this).find('.contact-social-link:nth-child(1)').css('border-bottom', '1px solid black');
+                $(this).find('.contact-social-link:nth-child(2)').css('border-bottom', '1px solid black');
+                $(this).find('.contact-social-link:even').css('border-right', '1px solid black');
+            });
+        }
+    }
+
+    onWindowResize();
+    $(window).resize(onWindowResize);
+
+    $('.contact-social-link').on('mouseover', function () {
+        backgroundColorChange($(this).find('img'));
+    });
+
     var menu = $('#menu');
     var logo = $('.logo');
     var menuIcon = $('.menu-icon');

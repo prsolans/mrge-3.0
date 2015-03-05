@@ -44,4 +44,23 @@ jQuery(document).ready(function ($) {
             TweenMax.staggerTo("#" + thumbnaillist + " .thumbnail-container:lt(4)", 1, { className: '+=animate', delay: 0.5, ease: Elastic.easeOut, force3D: true }, 0.2);
         }
     });
+
+    $(window).on("load resize", function (e) {
+        setLeadershipHeight();
+    });
 });
+
+function setLeadershipHeight() {
+    var tallest = 0;
+
+    $(".leadership-list .thumbnail-container .leader-info").each(function () {
+        if ($(this).height() > tallest) {
+            tallest = $(this).height();
+        }
+    });
+
+    var imgHeight = $(".leadership-list .thumbnail-container img").height(); 
+    var height = tallest + imgHeight + 80;
+
+    $(".leadership-list .thumbnail-container").height(height + "px");
+}

@@ -412,7 +412,7 @@ header .wrapper {width: 280px;}
 
 /* -----------[ FOOTER ]----------- */
 
-.footer {background-image:url(../images/assets/orange-wave.png), url(../images/assets/red-wave.png), url(../images/assets/footer.jpg); background-repeat: no-repeat, no-repeat, no-repeat; background-position: -30px 420px, 0px 430px, 0 0; background-size: 100%, 100%, cover; font-size: .9em;}
+.footer {background-image:url(../images/assets/footer-with.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center; font-size: .9em;}
 .footer .orange-wave {background-image: background-size: cover;}
 .footer .always-visible { color: white; height: 687px; max-width:1160px; margin: 0 auto; padding-top: 15px;}
 .footer .always-visible .copyright {float: left; width: 20%;}
@@ -431,13 +431,17 @@ header .wrapper {width: 280px;}
 @media (max-width: 30em) {
     .footer .always-visible {width: 280px; height: 120px; line-height: 1.4em;}
 }
-@-webkit-keyframes animatedWaves {
-    from { background-position: -30px 550px, 0px 550px, 0 0; opacity: 0, 0, 1; }
-    to { background-position: -30px 420px, 0px 430px, 0 0; opacity: .4, .4, 1;}
-}
-@keyframes animatedWaves {
-    from { background-position: -30px 750px, 0px 650px, 0 0; }
-    to { background-position: -30px 620px, 0px 630px, 0 0; }
-}
 
-.footer { -webkit-animation: animatedWaves 2s linear; animation: animatedWaves 2s linear; opacity: .4 2s; }
+
+/*.footer {background-image:url(../images/assets/orange-wave.png), url(../images/assets/red-wave.png), url(../images/assets/footer.jpg); background-repeat: no-repeat, no-repeat, no-repeat; background-position: -30px 420px, 0px 430px, 0 0; background-size: 100%, 100%, cover; font-size: .9em;}*/
+
+/*@-webkit-keyframes animatedWaves {*/
+    /*from { background-position: -30px 550px, 0px 550px, 0 0; opacity: 0, 0, 1; }*/
+    /*to { background-position: -30px 420px, 0px 430px, 0 0; opacity: .4, .4, 1;}*/
+/*}*/
+/*@keyframes animatedWaves {*/
+    /*from { background-position: -30px 750px, 0px 650px, 0 0; }*/
+    /*to { background-position: -30px 620px, 0px 630px, 0 0; }*/
+/*}*/
+
+/*.footer { -webkit-animation: animatedWaves 2s linear; animation: animatedWaves 2s linear; opacity: .4 2s; }*/

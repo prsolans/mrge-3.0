@@ -82,8 +82,8 @@ body{font: 100% 'GothamBook', Helvetica, Arial, Verdana, sans-serif; color: #292
 header { width:100%; position:fixed; top:0; left:0; z-index: 20000; }
 header .wrapper {width: 280px;}
 
-.header-small {height: 40px; background-color: white; padding: .5em 0; transition: 1s ;}
-.header-tall {height: 35px; background-color: white; padding: .5em 0; transition: 1s;}
+.header-small {height: 40px; background-color: white; padding: .5em 0; -webkit-transition: 1s; transition: 1s ;}
+.header-tall {height: 35px; background-color: white; padding: .5em 0; -webkit-transition: 1s; transition: 1s;}
 
 .logo {float: left; margin: 0; padding: 0; height: 35px; margin-top:6px; background-color: #292929;}
 .logo img {height: 35px; margin: 0; padding: 0;}

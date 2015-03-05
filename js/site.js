@@ -49,7 +49,7 @@ $(document).ready(function () {
 
     var screenWidth = $(window).width();
 
-    if (screenWidth <= '1024') {
+    if (screenWidth < '1024') {
         menu.addClass('menu-small');
         menuLink.addClass('menu-small-open');
     }

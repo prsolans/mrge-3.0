@@ -65,7 +65,6 @@ $(document).ready(function () {
         });
 
     // menu animation
-    // menu animation
     menuIcon.on('click', function () {
         if (menu.hasClass('open')) {
             menuIcon.attr('src', 'images/menu.png');
@@ -80,9 +79,16 @@ $(document).ready(function () {
         else {
             logo.hide().animate({opacity: 0}, 0, function(){});
             menu.addClass('open');
-            menu.animate({opacity: 1}, 0, function(){
-                menuLink.animate({opacity: 1}, 350)
-                menuIcon.css('background-color', '#292929').attr('src', 'images/menu-close.png');//.delay(350).css('background-color', '#292929').attr('src', 'images/menu-close.png');
+            menuIcon.css('background-color', '#292929').attr('src', 'images/menu-on.png');
+
+            menu.animate({opacity: 1}, 50, function(){
+                menuLink.animate({ opacity: 1 }, 550, function () {
+                    menuIcon.css('background-color', '#292929').attr('src', 'images/menu-close.png');
+                });
+            });
+
+            menu.promise().done(function () {
+                animateTextColor(menuLink);
             });
         }
     });
@@ -230,42 +236,40 @@ function animateImageBackground(element) {
 
         });
     }
-
-    if ($(element).hasClass('menu-icon')) {
-        $(element).animate({backgroundColor: '#33cc00'}, 500, function () {
-            $(element).animate({backgroundColor: '#' + colors[0]}, 3000, function () {
-                $(element).animate({backgroundColor: '#' + colors[1]}, 3000, function () {
-                    $(element).animate({backgroundColor: '#' + colors[2]}, 3000, function () {
-                        $(element).animate({backgroundColor: '#' + colors[3]}, 3000, function () {
-                            animateToGray(element);
-                        });
-                    });
-                });
-            });
-        });
-
-
-    }
 }
 
-function animateTextColor(element){
+function animateTextColor(element) {
+
+    console.log('running');
     var colors = ['#7EC300', '#CC0066', '#FF6600', '#FF9900'];
 
     $(element).animate({color: '#33cc00'}, 500, function () {
         console.log('1');
-        return;
-        $(element).animate({color: '#' + colors[0]}, 3000, function () {
+    });
+
+    $(element).promise().done(function () {
+        $(element).animate({color: colors[0]}, 3000, function() {
             console.log('2');
-            $(element).animate({color: '#' + colors[1]}, 3000, function () {
-                console.log('3');
-                $(element).animate({color: '#' + colors[2]}, 3000, function () {
-                    console.log('4');
-                    $(element).animate({color: '#' + colors[3]}, 3000, function () {
-                        console.log('5');
-                        animateToGray(element);
-                    });
-                });
-            });
+        });
+    });
+
+    $(element).promise().done(function () {
+        $(element).animate({ color: colors[1] }, 3000, function () {
+            console.log('3');
+        });
+    });
+
+    $(element).promise().done(function () {
+        $(element).animate({ color: colors[2] }, 3000, function () {
+            console.log('4');
+        });
+    });
+
+    $(element).promise().done(function () {
+        $(element).animate({ color: colors[3] }, 3000, function () {
+            animateToGray(element);
+
+            console.log('5');
         });
     });
 }

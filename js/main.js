@@ -1,3 +1,7 @@
+var carouselWidth;
+var leftWidth;
+var currentSlide = 0;
+
 jQuery(document).ready(function ($) {
 
     $('.thumbnails-list').each(function () {
@@ -47,6 +51,7 @@ jQuery(document).ready(function ($) {
 
     $(window).on("load resize", function (e) {
         setLeadershipHeight();
+        resetMergeologyCarouselSlidePositions();
     });
 });
 
@@ -63,4 +68,36 @@ function setLeadershipHeight() {
     var height = tallest + imgHeight + 80;
 
     $(".leadership-list .thumbnail-container").height(height + "px");
+}
+
+function resetMergeologyCarouselSlidePositions() {
+    carouselWidth = $(".mergeology-carousel").width();
+    leftWidth = $(".lp").width();
+    currentSlide = 0;
+
+    var $slides = $(".slide");
+    TweenLite.set($slides, { clearProps: "left" });
+    TweenLite.set($slides.filter(":gt(0)"), { left: carouselWidth + "px" });
+    TweenLite.set($slides.eq(currentSlide), .5, { left: (carouselWidth * -1) + "px" });
+}
+
+function beginMergeologyCarousel() {
+    var $slides = $(".slide");
+
+    TweenLite.set($slides.filter(":gt(0)"), { left: carouselWidth + "px" });
+    TweenLite.delayedCall(4, nextSlide);
+
+    function nextSlide() {
+        TweenLite.to($slides.eq(currentSlide), .5, { left: (carouselWidth * - 1) + "px" });
+
+        if (currentSlide < $slides.length - 1) {
+            currentSlide++;
+        }
+        else {
+            currentSlide = 0;
+        }
+
+        TweenLite.fromTo($slides.eq(currentSlide), .5, { left: carouselWidth + "px" }, { left: leftWidth + "px" });
+        TweenLite.delayedCall(4, nextSlide);
+    }
 }

@@ -153,20 +153,16 @@ header .wrapper {width: 280px;}
 /* -----------[ AGENCY ]----------- */
 #agency-container  {margin-bottom: 200px;}
 #agency-container .heading-title h1{margin-bottom: 30px;}
-.arrow-button {background-color: white; border:2px solid black; background-image:url(../images/icon/ico-arrow.png); background-size:60%; background-position: center center; background-repeat: no-repeat; border-radius:50%;
-    -webkit-box-shadow :  5px 5px 0 black;
-    -moz-box-shadow    :  5px 5px 0 black;
-    box-shadow         :  5px 5px 0 black; margin-top: 3em;
-    width: 70px; height: 70px; display: block; cursor: pointer; }
+.arrow-button { background-color: white; border:2px solid black; background-image:url(../images/icon/ico-arrow.png); background-size:60%; background-position: center center; background-repeat: no-repeat; border-radius:50%; -webkit-box-shadow :  5px 5px 0 black; -moz-box-shadow:  5px 5px 0 black; box-shadow:  5px 5px 0 black; margin-top: 3em; width: 70px; height: 70px; display: block; cursor: pointer; }
 .arrow-button:hover {background-color: black; background-image:url(../images/icon/ico-arrow-hover.png); background-position: center center; transition: background-color 0.2s ease 0s; cursor: pointer; }
 
 @-webkit-keyframes animatedArrow {
-from { background-position: bottom center; }
-to { background-position: center center;}
+from { background-position: bottom center; background-color: white;}
+to { background-position: center center; background-color: black;}
 }
 @keyframes animatedArrow {
-    from { background-position: bottom center; }
-    to { background-position: center center;}
+    from { background-position: bottom center; background-color: white;}
+    to { background-position: center center; background-color: black;}
 }
 
 .arrow-button:hover { -webkit-animation: animatedArrow 0.2s linear; animation: animatedArrow 0.2s linear; }
